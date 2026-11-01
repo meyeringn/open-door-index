@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Door Index: Can every Philadelphian get in the room?</title>
+<meta name="description" content="A nonpartisan, evidence-based scorecard of whether Disabled Philadelphians can take part in public meetings of City Council and 10 city boards and commissions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://meyeringn.github.io/open-door-index/">
+<meta property="og:title" content="Open Door Index: Can every Philadelphian get in the room?">
+<meta property="og:description" content="Nine access practices. Eleven Philadelphia public bodies. Every finding sourced and dated.">
+<meta property="og:image" content="https://meyeringn.github.io/open-door-index/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Share card for Open Door Index, reading: Can every Philadelphian get in the room?">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='3' width='20' height='27' rx='2' fill='%2314324A'/%3E%3Crect x='9' y='6' width='9' height='22' fill='%23F6C453'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wall:#EEF1F4; --paper:#FFFFFF; --ink:#13202B; --ink-soft:#3D4B57;
+  --door:#14324A; --door-2:#1E4766; --brick:#7A2E2A; --light:#F6C453; --light-2:#FBE3A1;
+  --met:#1F6E43; --partial:#7A5200; --notfound:#7A2E2A; --notyet:#4B5563;
+  --rule:#C9D1D9; --focus:#0B5FFF;
+  --measure:68ch;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--wall);color:var(--ink);font:400 1.0625rem/1.6 "Public Sans",system-ui,sans-serif}
+a{color:var(--door-2);text-underline-offset:3px}
+a:hover{color:var(--brick)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:10}
+.skip:focus{left:1rem;top:1rem}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* top bar */
+.topbar{background:var(--door);color:#fff}
+.topbar .wrap{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:center;justify-content:space-between;padding-top:.8rem;padding-bottom:.8rem}
+.brand{font-weight:800;letter-spacing:-.01em;font-size:1.05rem;color:#fff;text-decoration:none}
+.brand span{color:var(--light)}
+.topbar nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.25rem 1.1rem}
+.topbar nav a{color:#fff;text-decoration:none;font-size:.95rem}
+.topbar nav a:hover{text-decoration:underline;color:var(--light)}
+
+/* hero */
+.hero{padding:3.5rem 0 2.5rem}
+.hero h1{font-size:clamp(2.2rem,5.6vw,4.1rem);line-height:1.02;font-weight:800;letter-spacing:-.025em;margin:0 0 1rem;max-width:16ch}
+.hero .lede{font-size:1.2rem;max-width:58ch;color:var(--ink-soft);margin:0 0 2.2rem}
+.doors{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:clamp(.4rem,1.4vw,1.2rem);align-items:start;margin:0;padding:1.2rem 0 0;list-style:none}
+.doors li{display:flex}
+.door-btn{all:unset;display:flex;flex-direction:column;width:100%;cursor:pointer;text-align:center;border-radius:4px;padding-bottom:.6rem}
+.door-btn:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.frame{display:block;width:100%;position:relative;aspect-ratio:9/19;background:linear-gradient(180deg,var(--light) 0%,var(--light-2) 100%);border:clamp(3px,.5vw,6px) solid var(--door);border-bottom-width:clamp(5px,.8vw,9px);border-radius:999px 999px 2px 2px;perspective:260px;overflow:hidden}
+.leaf{display:block;position:absolute;inset:0;background:linear-gradient(90deg,var(--door) 0%,var(--door-2) 100%);transform-origin:left center;transform:rotateY(calc(var(--open,0) * -1deg));border-radius:999px 999px 0 0;box-shadow:inset -3px 0 0 rgba(255,255,255,.12)}
+.leaf::after{content:"";position:absolute;right:16%;top:54%;width:10%;aspect-ratio:1;border-radius:50%;background:var(--light)}
+.door-btn:hover .frame,.door-btn:focus-visible .frame{border-color:var(--brick)}
+.door-name{display:block;margin-top:.55rem;hyphens:auto;font-size:clamp(.62rem,1.05vw,.82rem);line-height:1.2;font-weight:600;color:var(--ink)}
+.door-count{display:block;font-size:clamp(.62rem,1vw,.8rem);color:var(--ink-soft)}
+@media (prefers-reduced-motion:no-preference){
+  .doors.ready .leaf{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+}
+.hero-key{margin:1.4rem 0 0;color:var(--ink-soft);font-size:.95rem;max-width:70ch}
+@media (max-width:720px){
+  .doors{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:1.2rem}
+  .door-name{font-size:.72rem;overflow-wrap:anywhere}
+  .door-count{font-size:.72rem}
+}
+
+/* sections */
+section.block{padding:3rem 0;border-top:1px solid var(--rule)}
+section.block h2{font-size:clamp(1.6rem,3.2vw,2.3rem);line-height:1.1;letter-spacing:-.02em;margin:0 0 .8rem;font-weight:800}
+section.block>.wrap>p,.prose p{max-width:var(--measure)}
+.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-top:1.5rem}
+.finding{border-left:6px solid var(--light);padding:.2rem 0 .2rem 1rem}
+.finding strong{display:block;font-size:2.4rem;line-height:1;font-weight:800;color:var(--door)}
+.finding p{margin:.4rem 0 0}
+
+/* legend */
+.legend{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin:1rem 0 0;padding:0;list-style:none;font-size:.95rem}
+.status{display:inline-flex;align-items:center;gap:.4rem;font-weight:600;white-space:nowrap}
+.dot{width:1.05rem;height:1.05rem;border-radius:50%;display:inline-grid;place-items:center;font-size:.7rem;color:#fff;flex:none}
+.s-met{color:var(--met)} .s-met .dot{background:var(--met)}
+.s-partial{color:var(--partial)} .s-partial .dot{background:linear-gradient(90deg,var(--partial) 50%,#fff 50%);border:2px solid var(--partial)}
+.s-notfound{color:var(--notfound)} .s-notfound .dot{background:#fff;border:2px solid var(--notfound)}
+.s-notyet{color:var(--notyet)} .s-notyet .dot{background:#fff;border:2px dashed var(--notyet)}
+
+/* controls */
+.controls{display:flex;flex-wrap:wrap;gap:.8rem 1.4rem;align-items:end;margin:1.6rem 0 1rem}
+.controls label{display:block;font-weight:600;font-size:.9rem;margin-bottom:.25rem}
+select,button{font:inherit}
+select{padding:.5rem .6rem;border:2px solid var(--door);border-radius:6px;background:#fff;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem 1rem;border:2px solid var(--door);background:var(--door);color:#fff;border-radius:6px;font-weight:600;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--door-2);color:#fff}
+.btn.ghost{background:#fff;color:var(--door)}
+.btn.ghost:hover{background:var(--light-2);color:var(--ink)}
+
+/* body cards */
+.bodies{display:grid;gap:1.6rem}
+.body{background:var(--paper);border:1px solid var(--rule);border-top:8px solid var(--door);border-radius:4px 4px 6px 6px;padding:1.4rem 1.4rem 1.2rem;scroll-margin-top:1rem}
+.body header{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;align-items:baseline;justify-content:space-between}
+.body h3{margin:0;font-size:1.45rem;letter-spacing:-.01em;line-height:1.2}
+.score{font-weight:800;font-size:1.05rem;color:var(--door)}
+.score small{font-weight:400;color:var(--ink-soft);font-size:.9rem}
+.meter{display:flex;gap:3px;margin:.7rem 0 .2rem;max-width:420px}
+.meter span{flex:1;height:10px;border-radius:2px;background:#DDE3E9}
+.meter span.m{background:var(--met)}
+.meter span.p{background:repeating-linear-gradient(135deg,var(--partial) 0 4px,#E9D9B6 4px 8px)}
+.body .about{margin:.6rem 0 1rem;color:var(--ink-soft);max-width:var(--measure)}
+.body .note{background:var(--light-2);border-left:5px solid var(--light);padding:.7rem 1rem;margin:0 0 1rem;max-width:var(--measure)}
+table{border-collapse:collapse;width:100%}
+.practices th,.practices td{text-align:left;vertical-align:top;padding:.6rem .5rem;border-top:1px solid var(--rule)}
+.practices thead th{font-size:.85rem;color:var(--ink-soft);font-weight:600;border-top:0}
+.practices td.ev{color:var(--ink);font-size:.97rem}
+.practices td.ev a{font-size:.9rem}
+.practices th[scope=row]{font-weight:600;width:30%}
+.practices td.st{width:17%}
+.card-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+.findings-d summary{cursor:pointer;font-weight:600;color:var(--door-2);padding:.5rem 0;width:max-content;max-width:100%}
+.findings-d summary:hover{color:var(--brick)}
+.findings-d[open] summary{margin-bottom:.4rem}
+@media (max-width:720px){
+  .practices thead{display:none}
+  .practices tr{display:grid;grid-template-columns:1fr;border-top:1px solid var(--rule);padding:.5rem 0}
+  .practices th,.practices td{border:0;padding:.15rem 0;width:auto!important}
+}
+
+/* compare */
+.compare-wrap{overflow-x:auto;background:#fff;border:1px solid var(--rule);border-radius:6px}
+.compare th,.compare td{padding:.55rem .6rem;border-bottom:1px solid var(--rule);text-align:center;font-size:.92rem}
+.compare th:first-child,.compare td:first-child{text-align:left;position:sticky;left:0;background:#fff}
+.compare thead th{font-weight:600;font-size:.8rem;vertical-align:bottom;color:var(--ink-soft)}
+.compare td .dot{vertical-align:middle}
+
+/* standard */
+.standard{background:var(--door);color:#fff;border-radius:6px;padding:1.4rem 1.5rem;max-width:860px}
+.standard p{margin:.5rem 0;max-width:none}
+.standard .label{color:var(--light);font-weight:600;margin:0 0 .4rem}
+.copyrow{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-top:1rem}
+.copyrow .btn{background:var(--light);color:var(--ink);border-color:var(--light)}
+.copyrow .btn:hover{background:#fff}
+[role=status]{min-height:1.4em}
+#tipForm select{width:100%;max-width:100%}
+
+/* checklist */
+.field{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:1.2rem 1.4rem;max-width:860px}
+.field ol{padding-left:1.4rem;margin:.6rem 0}
+.field li{margin:.45rem 0}
+.field label{cursor:pointer}
+.field input[type=checkbox]{width:1.15rem;height:1.15rem;margin-right:.5rem;vertical-align:-.15rem;accent-color:var(--door)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.8rem}
+.rights h3,.two h3{font-size:1.15rem;margin:1.4rem 0 .3rem}
+.sources ol{padding-left:1.3rem;max-width:var(--measure)}
+.sources li{margin:.35rem 0;font-size:.95rem}
+.disclosure{background:var(--light-2);border:2px solid var(--light);border-radius:6px;padding:1rem 1.2rem;max-width:var(--measure)}
+footer.site{background:var(--ink);color:#E4E9EE;padding:2.2rem 0;margin-top:2rem;font-size:.95rem}
+footer.site a{color:var(--light)}
+footer.site p{max-width:var(--measure)}
+
+/* print */
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topbar,.hero .doors,.hero-key,.controls,.card-actions,.no-print,footer.site nav,.skip{display:none!important}
+  section.block{border:0;padding:1rem 0}
+  .body{break-inside:avoid;border:1px solid #999;border-top:6px solid #000}
+  body.print-one .print-hide{display:none!important}
+  body.print-one .body:not(.printing){display:none!important}
+  body.print-checklist .print-hide-cl{display:none!important}
+  a{color:#000}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<div class="topbar print-hide print-hide-cl">
+  <div class="wrap">
+    <a class="brand" href="#top">Open Door <span>Index</span></a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#scorecard">Scorecard</a></li>
+        <li><a href="#compare">Compare</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#standard">The standard</a></li>
+        <li><a href="#field">Field checklist</a></li>
+        <li><a href="#method">Method</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<main id="main">
+<div class="hero print-hide print-hide-cl" id="top">
+  <div class="wrap">
+    <h1>Can every Philadelphian get in the room?</h1>
+    <p class="lede">Public meetings are where the city decides things. This index checks whether City Council and ten city boards tell Disabled residents how to take part, using only what each body publishes itself. Every finding is sourced and dated.</p>
+    <ul class="doors" id="doors" aria-label="Each door is a public body. The wider it opens, the more access practices it documents. Select a door to read its scorecard."></ul>
+    <p class="hero-key">A door opens wider for every one of nine access practices a body documents. Partial credit opens it half as far.</p>
+  </div>
+</div>
+
+<section class="block print-hide print-hide-cl" aria-labelledby="findings-h">
+  <div class="wrap">
+    <h2 id="findings-h">What we found</h2>
+    <p>Checked November 1, 2026, against each body's own meeting pages and most recent meeting documents.</p>
+    <div class="findings" id="findings"></div>
+  </div>
+</section>
+
+<section class="block" id="scorecard" aria-labelledby="scorecard-h">
+  <div class="wrap">
+    <h2 id="scorecard-h" class="print-hide">The scorecard</h2>
+    <p class="print-hide">Each body is checked against the same nine practices. A practice counts as met only when the body's own published materials document it.</p>
+    <ul class="legend print-hide" aria-label="What each status means">
+      <li><span class="status s-met"><span class="dot" aria-hidden="true">✓</span>Met</span>: documented, with a source</li>
+      <li><span class="status s-partial"><span class="dot" aria-hidden="true"></span>Partial</span>: part of the practice is documented</li>
+      <li><span class="status s-notfound"><span class="dot" aria-hidden="true"></span>Not found</span>: not in the materials we reviewed</li>
+      <li><span class="status s-notyet"><span class="dot" aria-hidden="true"></span>Not yet audited</span>: we couldn't check it yet</li>
+    </ul>
+    <div class="controls print-hide">
+      <div>
+        <label for="sort">Sort bodies</label>
+        <select id="sort">
+          <option value="list">In list order</option>
+          <option value="most">Most practices met</option>
+          <option value="fewest">Fewest practices met</option>
+          <option value="az">A to Z</option>
+        </select>
+      </div>
+      <div>
+        <label for="filter">Show practice</label>
+        <select id="filter">
+          <option value="">All nine practices</option>
+        </select>
+      </div>
+      <button class="btn ghost" type="button" id="csv">Download the data (CSV)</button>
+    </div>
+    <div class="bodies" id="bodies" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="block print-hide print-hide-cl" id="compare" aria-labelledby="compare-h">
+  <div class="wrap">
+    <h2 id="compare-h">Compare every body</h2>
+    <p>Read across a row for one body, or down a column to see which practices the whole city is missing.</p>
+    <div class="compare-wrap" tabindex="0" role="region" aria-labelledby="compare-h">
+      <table class="compare" id="compareTable"></table>
+    </div>
+  </div>
+</section>
+
+<section class="block print-hide print-hide-cl rights" id="rights" aria-labelledby="rights-h">
+  <div class="wrap">
+    <h2 id="rights-h">Your rights at a public meeting</h2>
+    <div class="two">
+      <div>
+        <h3>You can see the agenda a day ahead</h3>
+        <p>Pennsylvania's Sunshine Act, as amended by Act 65 of 2021, requires agencies with a website to post meeting agendas there at least 24 hours before the meeting, and also at the meeting site and their main office. In October 2026, the legislature passed SB 1150 to close a loophole that let boards add items at the last minute by majority vote; Spotlight PA reports Governor Shapiro signed it.</p>
+        <h3>You can ask for an accommodation</h3>
+        <p>Under the Americans with Disabilities Act, City programs, including public meetings, must communicate as effectively with Disabled people as with everyone else. The City says it provides reasonable modifications and communication aids at no cost. Requests go to the ADA Compliance Director at <a href="mailto:ADA.Request@phila.gov">ADA.Request@phila.gov</a>.</p>
+      </div>
+      <div>
+        <h3>How to ask</h3>
+        <p>Ask early, in writing, and name what you need: an ASL interpreter, CART live captions, large print, a step-free route, or a way to comment remotely. Copy the board's own contact if it publishes one.</p>
+        <h3>If the answer is no</h3>
+        <p>Ask for the reason in writing, then contact the City's Office for People with Disabilities. You can also send a tip to this index, so the next person finds out before they go.</p>
+        <p><a class="btn ghost" href="#tip">Send a tip or correction</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block print-hide print-hide-cl" id="standard" aria-labelledby="standard-h">
+  <div class="wrap">
+    <h2 id="standard-h">The Open Door standard</h2>
+    <p>Every practice in this index is cheap to fix with one paragraph. Any board can paste this onto its agendas and meeting pages, fill in the brackets, and move up the index the same day.</p>
+    <div class="standard">
+      <p class="label">Access paragraph for agendas</p>
+      <div id="standardText">
+        <p>Everyone is welcome at this meeting. It is held at [address], which has [a step-free entrance at ___ / an accessible restroom on floor ___]. You can also join and speak live by video at [link] or by phone at [number].</p>
+        <p>Live captions [are provided / can be requested]. To request an ASL interpreter, CART captioning, materials in large print or another format, or any other accommodation, contact [name] at [email] or [phone] by [day and time]. Requests after that time will still be met whenever possible.</p>
+        <p>You can send written comments to [email] until [deadline]. A recording of this meeting will be posted at [link] within [number] days.</p>
+      </div>
+      <div class="copyrow">
+        <button class="btn" type="button" id="copyStandard">Copy the paragraph</button>
+        <span role="status" id="copyMsg"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block print-hide" id="field" aria-labelledby="field-h">
+  <div class="wrap">
+    <h2 id="field-h">Field checklist for meeting observers</h2>
+    <p class="print-hide-cl">For Philadelphia Documenters, journalists, and residents who attend meetings. Note what you see in the room or online, then send it to the index so the scorecard stays current.</p>
+    <div class="field">
+      <p><strong>Body:</strong> ____________________ &nbsp; <strong>Date:</strong> __________ &nbsp; <strong>In person / online</strong></p>
+      <ol>
+        <li><label><input type="checkbox">Was the agenda online at least 24 hours before the meeting?</label></li>
+        <li><label><input type="checkbox">Did the agenda or meeting page explain how to request an accommodation, with a contact?</label></li>
+        <li><label><input type="checkbox">Could people speak live from home, by video or phone?</label></li>
+        <li><label><input type="checkbox">Were live captions on, on screen or online?</label></li>
+        <li><label><input type="checkbox">Was an ASL interpreter present or offered?</label></li>
+        <li><label><input type="checkbox">Was there a step-free route from the street to the meeting room?</label></li>
+        <li><label><input type="checkbox">Was there accessible seating, and could speakers reach the microphone seated?</label></li>
+        <li><label><input type="checkbox">Was the meeting recorded, with a note about where to find it?</label></li>
+        <li><label><input type="checkbox">Were handouts or slides available in another format, or online in advance?</label></li>
+      </ol>
+      <p><strong>Notes:</strong></p>
+      <p>______________________________________________________________</p>
+      <p>______________________________________________________________</p>
+    </div>
+    <div class="card-actions">
+      <button class="btn" type="button" id="printChecklist">Print the checklist</button>
+    </div>
+  </div>
+</section>
+
+<section class="block print-hide print-hide-cl" id="tip" aria-labelledby="tip-h">
+  <div class="wrap">
+    <h2 id="tip-h">Send a tip or correction</h2>
+    <p>Saw something at a meeting, or found a page we missed? Every correction is checked and dated before it changes a score. Boards that update their pages can send the link, too.</p>
+    <form id="tipForm" class="field" novalidate>
+      <div class="two">
+        <div>
+          <label for="tipBody"><strong>Which body?</strong></label><br>
+          <select id="tipBody" required></select>
+        </div>
+        <div>
+          <label for="tipPractice"><strong>Which practice?</strong></label><br>
+          <select id="tipPractice"></select>
+        </div>
+      </div>
+      <p><label for="tipText"><strong>What did you see, and where?</strong></label><br>
+      <textarea id="tipText" rows="4" style="width:100%;font:inherit;padding:.5rem;border:2px solid var(--door);border-radius:6px" aria-describedby="tipHelp"></textarea></p>
+      <p id="tipHelp" style="color:var(--ink-soft);font-size:.95rem">A link to the page or document helps most. This opens an email in your own mail app; nothing is sent until you press send there.</p>
+      <button class="btn" type="submit">Write the email</button>
+      <p role="status" id="tipMsg"></p>
+    </form>
+  </div>
+</section>
+
+<section class="block print-hide print-hide-cl" id="method" aria-labelledby="method-h">
+  <div class="wrap prose">
+    <h2 id="method-h">How the index works</h2>
+    <p>Open Door Index looks only at what each body publishes about its own meetings: its meeting page on phila.gov or its own site, and the instructions on its most recent agenda. That is what a resident sees before deciding whether to go. A body may do more in practice than it writes down; when it does, publishing it is the fix, and we will update the score as soon as we can see it.</p>
+    <p>Each body gets a count of practices met out of nine. Partial findings are shown but not counted. There are no letter grades, because the point is a to-do list, not a ranking.</p>
+    <p>Where a phila.gov document's web address includes its upload time, we use that time to check whether an agenda went up at least 24 hours ahead. We say so in the finding.</p>
+    <p>The SEPTA Board is regional rather than a City body and is not included. The index started with eleven bodies and will grow.</p>
+    <div class="disclosure">
+      <p><strong>Disclosure.</strong> This index was built by Nico Meyering, who chairs the Mayor's Commission on People with Disabilities. That Commission was scored first, with the same rules as everyone else. This is an independent project. It is not affiliated with or endorsed by the Committee of Seventy, the City of Philadelphia, or any body listed here.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block print-hide print-hide-cl sources" id="sources" aria-labelledby="sources-h">
+  <div class="wrap">
+    <h2 id="sources-h">Sources</h2>
+    <p>All sources were checked November 1, 2026.</p>
+    <ol id="sourceList"></ol>
+  </div>
+</section>
+</main>
+
+<footer class="site print-hide print-hide-cl">
+  <div class="wrap">
+    <p><strong>Open Door Index</strong> is free, open source, and nonpartisan. Built by <a href="https://github.com/meyeringn">Nico Meyering</a> in Philadelphia.</p>
+    <nav aria-label="Project links">
+      <p><a href="https://github.com/meyeringn/open-door-index">Source code and data</a> · <a href="https://github.com/meyeringn/open-door-index/blob/main/ACCESSIBILITY.md">Accessibility statement</a> · <a href="https://github.com/meyeringn/open-door-index/blob/main/LICENSE">MIT License</a></p>
+    </nav>
+    <p>Data last verified: November 2026. Page visits are counted anonymously with GoatCounter; no cookies.</p>
+  </div>
+</footer>
+
+<script>
+const CHECKED = "November 1, 2026";
+const PRACTICES = [
+  {id:"agenda", name:"Agenda posted at least 24 hours ahead"},
+  {id:"remote", name:"Remote live participation (speak by video or phone)"},
+  {id:"written", name:"Written comment accepted"},
+  {id:"captions", name:"Live captions"},
+  {id:"asl", name:"ASL interpretation on request"},
+  {id:"contact", name:"Accommodation contact published for meetings"},
+  {id:"venue", name:"Venue accessibility described"},
+  {id:"recording", name:"Recordings archived for the public"},
+  {id:"materials", name:"Agenda in readable text"}
+];
+const LABEL = {met:"Met", partial:"Partial", notfound:"Not found", notyet:"Not yet audited"};
+const SOURCES = {
+  council_pc:["City Council: Offering public comment at Council sessions","https://phlcouncil.com/offering-public-comment-at-council-sessions-temp/"],
+  council_lap:["Philadelphia City Council Language Access Plan 2026","https://www.phila.gov/media/20260811100910/Philadelphia-City-Council-Language-Access-Plan-2026.pdf"],
+  phlgovtv:["PHLgovTV (City of Philadelphia)","https://www.phila.gov/departments/office-of-innovation-and-technology/phlgovtv/"],
+  legistar:["Jenkins Law Library: Agendas, minutes and more on City Council's Legislative Information Center","https://www.jenkinslaw.org/news/agendas-minutes-and-more-philadelphia-city-councils-legislative-information-center"],
+  boe:["Board of Education: Meetings","https://www.philasd.org/schoolboard/meetings/"],
+  pcpc_jun:["City Planning Commission agenda, June 4, 2026","https://www.phila.gov/media/20260602073537/PCPC-Agenda-June-4-2026.pdf"],
+  pcpc_sep:["City Planning Commission agenda, September 17, 2026","https://www.phila.gov/media/20260911120306/PCPC-Agenda-September-172026.pdf"],
+  pcpc_rec:["City Planning Commission: Recordings of public meetings","https://www.phila.gov/departments/philadelphia-city-planning-commission/recordings-of-public-meetings/"],
+  zba:["Participate in a Zoning Board of Adjustment hearing","https://phila.gov/services/zoning-planning-development/participate-in-a-zoning-board-of-adjustment-hearing/"],
+  ethics:["Board of Ethics: Public meetings","https://www.phila.gov/departments/board-of-ethics/about/public-meetings/"],
+  vote:["City Commissioners: Commissioner meetings","https://vote.phila.gov/resources-data/commissioner-meetings/commissioner-meetings"],
+  hc:["Historical Commission meeting FAQ, October 9, 2026","https://www.phila.gov/media/20261001101845/HC-770-Oct-2026-FAQ.pdf"],
+  art:["Art Commission agenda, June 10, 2026","https://www.phila.gov/media/20260605102639/2026.06.10_Art-Commission-agenda.pdf"],
+  csc:["Civil Service Commission","https://www.phila.gov/departments/civil-service-commission/"],
+  lir:["Board of License and Inspection Review","https://phila.gov/departments/board-of-license-and-inspection-review"],
+  mcpd:["Office for People with Disabilities: The Commission","https://www.phila.gov/departments/office-for-people-with-disabilities/commission/"],
+  opd:["Mayor's Office for People with Disabilities","https://www.phila.gov/departments/mayors-office-for-people-with-disabilities/"],
+  rm:["City of Philadelphia: Submit a reasonable modification request (Spanish-language page)","https://www.phila.gov/es/services/diversity-inclusion-accessibility-immigration/accessibility-services/submit-a-reasonable-modification-request/"],
+  sunshine:["Pennsylvania Municipal League: New public meeting requirements under the Sunshine Law (Act 65 of 2021)","https://www.pml.org/wp-content/uploads/2021/07/New-Public-Meeting-Requirements-Under-the-Sunshine-Law.pdf"],
+  sb1150:["Spotlight PA: Pennsylvania Sunshine Act loophole closed (October 21, 2026)","https://www.spotlightpa.org/news/2026/10/pennsylvania-sunshine-act-loophole-closed-capitol/"]
+};
+const NF = (src, txt) => ({s:"notfound", t: txt || "Not described in the materials reviewed.", src});
+const NY = (src, txt) => ({s:"notyet", t: txt, src});
+const BODIES = [
+ {id:"mcpd", name:"Mayor's Commission on People with Disabilities", about:"Advises the City on policies and programs for Disabled Philadelphians. Meets every other month.",
+  note:"Nico Meyering chairs this Commission and scored it first, using the same rules as every other body. Its public page currently documents almost none of these practices.",
+  p:{agenda:NF(["mcpd"],"The Commission's page lists no meeting schedule or agendas."),
+     remote:NF(["mcpd"]), written:NF(["mcpd"],"A contact is listed for comments, questions, and concerns, but not for meeting testimony."),
+     captions:NF(["mcpd"]), asl:NF(["mcpd"]),
+     contact:{s:"partial",t:"The Office for People with Disabilities lists ADA.Request@phila.gov and a Commission contact, but no meeting-specific accommodation instructions or deadline.",src:["mcpd","opd"]},
+     venue:NF(["mcpd"]), recording:NF(["mcpd"]), materials:NF(["mcpd"],"No agendas are published to check.")}},
+ {id:"council", name:"City Council", about:"Philadelphia's legislature. Stated meetings take public comment on bills and resolutions on the agenda.",
+  p:{agenda:NY(["legistar"],"Agendas are published in the Legislative Information Center; how far ahead was not verified."),
+     remote:NF(["council_pc"],"The public comment page describes in-person and advance sign-up only. A remote-meeting notice appears only in the page's older metadata."),
+     written:{s:"met",t:"Comments emailed by 3 p.m. the day before become part of the record, though they are not read aloud.",src:["council_pc"]},
+     captions:NF(["council_pc","phlgovtv"],"No live captioning of sessions is described."),
+     asl:{s:"met",t:"Council's 2026 Language Access Plan says ASL interpreters may be ordered through its Language Access Coordinator in advance.",src:["council_lap"]},
+     contact:{s:"met",t:"Speakers are told to tell the Chief Clerk's Office about accommodations when signing up, and the Language Access Coordinator's contact is published.",src:["council_pc","council_lap"]},
+     venue:NF(["council_pc"]),
+     recording:{s:"partial",t:"Sessions air live on PHLgovTV, and transcripts are available through the Legislative Information Center. An on-demand video archive is not described.",src:["phlgovtv","legistar"]},
+     materials:{s:"met",t:"Agendas and minutes are published as web pages in the Legislative Information Center.",src:["legistar"]}}},
+ {id:"boe", name:"Board of Education", about:"Governs the School District of Philadelphia.",
+  p:{agenda:{s:"met",t:"Action items are posted with the agenda “generally 3 weeks in advance.”",src:["boe"]},
+     remote:{s:"met",t:"Registered speakers may take part in person or remotely.",src:["boe"]},
+     written:{s:"met",t:"The Board accepts unlimited written testimony submitted on time by email or online form.",src:["boe"]},
+     captions:NF(["boe"]),
+     asl:NF(["boe"],"Translation can be requested by 4 p.m. the business day before, but ASL is not mentioned."),
+     contact:{s:"partial",t:"The page links to an accommodations section on the District's contact page; no meeting-specific contact or deadline.",src:["boe"]},
+     venue:NF(["boe"],"The address, 440 N. Broad Street, is given without access details."),
+     recording:{s:"met",t:"Meetings are livestreamed, on cable, and archived back to 2015.",src:["boe"]},
+     materials:NY(["boe"],"Agenda format not yet checked.")}},
+ {id:"pcpc", name:"City Planning Commission", about:"Reviews plans, zoning bills, and major development.",
+  p:{agenda:{s:"met",t:"The June 4, 2026 agenda's web address records an upload on June 2; the September 17 agenda's records September 11.",src:["pcpc_jun","pcpc_sep"]},
+     remote:{s:"met",t:"The public can join and speak by computer, tablet, smartphone, or telephone.",src:["pcpc_jun"]},
+     written:{s:"met",t:"Email comments to planning@phila.gov by noon on the day of the meeting.",src:["pcpc_jun"]},
+     captions:NF(["pcpc_jun"]), asl:NF(["pcpc_jun"]), contact:NF(["pcpc_jun"]), venue:NF(["pcpc_jun"],"The room, 1515 Arch Street, Room 18-029, is given without access details."),
+     recording:{s:"met",t:"Meetings are recorded, and recordings are posted online.",src:["pcpc_jun","pcpc_rec"]},
+     materials:{s:"met",t:"The agenda is a text-based PDF.",src:["pcpc_jun"]}}},
+ {id:"zba", name:"Zoning Board of Adjustment", about:"Hears zoning appeals and requests for variances.",
+  p:{agenda:NY(["zba"],"Cases are listed on the ZBA calendar; how far ahead is not stated."),
+     remote:{s:"met",t:"Join the Zoom webinar or call in, then raise your hand to speak.",src:["zba"]},
+     written:{s:"met",t:"Mail or email comments to RCOZBA@phila.gov with the case number.",src:["zba"]},
+     captions:NF(["zba"]), asl:NF(["zba"]), contact:NF(["zba"]), venue:NF(["zba"]),
+     recording:{s:"partial",t:"Hearings are recorded, but a public archive is not described.",src:["zba"]},
+     materials:NY(["zba"],"Calendar format not yet checked.")}},
+ {id:"ethics", name:"Board of Ethics", about:"Administers and enforces the City's ethics, campaign finance, and lobbying rules. Meets monthly.",
+  p:{agenda:NY(["ethics"],"Agendas for upcoming meetings are posted; how far ahead is not stated."),
+     remote:NF(["ethics"],"The page doesn't say how to join or speak remotely."), written:NF(["ethics"],"Public comment isn't mentioned."),
+     captions:NF(["ethics"]), asl:NF(["ethics"]), contact:NF(["ethics"]), venue:NF(["ethics"]),
+     recording:{s:"met",t:"Videos of past meetings are posted.",src:["ethics"]},
+     materials:NY(["ethics"],"Agenda format not yet checked.")}},
+ {id:"commissioners", name:"City Commissioners", about:"Philadelphia's board of elections.",
+  p:{agenda:NY(["vote"],"Agendas, including amended agendas, are listed by meeting date; how far ahead is not stated."),
+     remote:{s:"partial",t:"Meetings are livestreamed, but public comment is by email only.",src:["vote"]},
+     written:{s:"met",t:"Email phillyelection@phila.gov with “Public Comment” in the subject by 9:45 a.m. on meeting day.",src:["vote"]},
+     captions:NF(["vote"]), asl:NF(["vote"]), contact:NF(["vote"]), venue:NF(["vote"],"The address, 11311 Roosevelt Boulevard, is given without access details."),
+     recording:{s:"partial",t:"Transcripts are linked for some meetings; an archive of the livestreams is not described.",src:["vote"]},
+     materials:NY(["vote"],"Agenda format not yet checked.")}},
+ {id:"hc", name:"Historical Commission", about:"Designates and protects historic buildings and districts.",
+  p:{agenda:{s:"partial",t:"Meeting instructions for the October 9, 2026 meeting were uploaded October 1. The agenda's own posting time was not separately checked.",src:["hc"]},
+     remote:{s:"met",t:"Join by Zoom or phone and raise your hand to speak. Public participants are audio only.",src:["hc"]},
+     written:{s:"met",t:"Email preservation@phila.gov until noon one business day before the meeting.",src:["hc"]},
+     captions:NF(["hc"]), asl:NF(["hc"]), contact:NF(["hc"],"The only contacts are for questions about comments, not accommodations."),
+     venue:{s:"partial",t:"Describes the lobby security check and the elevator route to the 18th floor, but no other access details.",src:["hc"]},
+     recording:{s:"met",t:"Meetings are recorded and posted on the Commission's recordings page.",src:["hc"]},
+     materials:{s:"met",t:"Meeting instructions are a text-based PDF.",src:["hc"]}}},
+ {id:"art", name:"Art Commission", about:"Reviews the design of public buildings, public art, and signs.",
+  p:{agenda:{s:"met",t:"The June 10, 2026 agenda's web address records an upload on June 5.",src:["art"]},
+     remote:{s:"met",t:"Join by Zoom and raise your hand, or call in and press *9.",src:["art"]},
+     written:{s:"met",t:"Email artcommission@phila.gov before noon the day before the meeting.",src:["art"]},
+     captions:NF(["art"]), asl:NF(["art"]), contact:NF(["art"]), venue:NF(["art"]),
+     recording:{s:"met",t:"Meetings are recorded, with past recordings posted online.",src:["art"]},
+     materials:{s:"met",t:"The agenda is a text-based PDF.",src:["art"]}}},
+ {id:"csc", name:"Civil Service Commission", about:"Hears appeals from City employees and oversees civil service rules.",
+  p:{agenda:NY(["csc"],"Monthly meeting agendas are linked; how far ahead is not stated."),
+     remote:NF(["csc"],"Virtual hearings are listed, but how the public can take part is not explained."),
+     written:NF(["csc"]), captions:NF(["csc"]), asl:NF(["csc"]), contact:NF(["csc"]), venue:NF(["csc"]), recording:NF(["csc"]),
+     materials:NY(["csc"],"Agenda format not yet checked.")}},
+ {id:"lir", name:"Board of License & Inspection Review", about:"Hears appeals of permits, violations, and notices from Licenses & Inspections.",
+  p:{agenda:NY(["lir"],"Scheduled appeals are on the L&I Appeals Calendar; how far ahead is not stated."),
+     remote:{s:"partial",t:"Meetings are held virtually and in person, by Zoom or phone, but a public comment process is not described.",src:["lir"]},
+     written:NF(["lir"]), captions:NF(["lir"]), asl:NF(["lir"]), contact:NF(["lir"]), venue:NF(["lir"]),
+     recording:{s:"met",t:"Past public meetings are on a YouTube playlist.",src:["lir"]},
+     materials:NY(["lir"],"Calendar format not yet checked.")}}
+];
+
+const $ = s => document.querySelector(s);
+const metCount = b => PRACTICES.filter(p => b.p[p.id].s === "met").length;
+const partCount = b => PRACTICES.filter(p => b.p[p.id].s === "partial").length;
+const srcNum = {}; Object.keys(SOURCES).forEach((k,i)=> srcNum[k]=i+1);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const statusHTML = s => `<span class="status s-${s}"><span class="dot" aria-hidden="true">${s==="met"?"✓":""}</span>${LABEL[s]}</span>`;
+
+function renderDoors(){
+  const ul = $("#doors");
+  ul.innerHTML = BODIES.map(b => {
+    const m = metCount(b), p = partCount(b);
+    const open = 4 + (m + p*0.5) / 9 * 84;
+    return `<li><a class="door-btn" href="#body-${b.id}" data-open="${open.toFixed(1)}">
+      <span class="frame" aria-hidden="true"><span class="leaf"></span></span>
+      <span class="door-name">${esc(b.name)}</span>
+      <span class="door-count">${m} of 9</span></a></li>`;
+  }).join("");
+  requestAnimationFrame(() => {
+    ul.classList.add("ready");
+    requestAnimationFrame(() => ul.querySelectorAll(".door-btn").forEach(a => a.querySelector(".leaf").style.setProperty("--open", a.dataset.open)));
+  });
+}
+
+function renderFindings(){
+  const n = BODIES.length;
+  const by = id => BODIES.filter(b => b.p[id].s === "met").length;
+  const asl = BODIES.filter(b => b.p.asl.s === "met").map(b => b.name);
+  $("#findings").innerHTML = [
+    [by("captions"), `of ${n} bodies document live captions at their meetings.`],
+    [by("asl"), `of ${n} document how to get an ASL interpreter${asl.length===1?`: ${esc(asl[0])}`:""}.`],
+    [by("venue"), `of ${n} describe whether their meeting room is accessible.`],
+    [by("remote"), `of ${n} let residents speak live from home, by video or phone. That's the good news.`]
+  ].map(([num, txt]) => `<div class="finding"><strong>${num}</strong><p>${txt}</p></div>`).join("");
+}
+
+function sources(ids){ return ids.map(k => `<a href="${SOURCES[k][1]}" rel="noopener">${esc(SOURCES[k][0])}</a>`).join("; "); }
+
+function renderBodies(){
+  const sort = $("#sort").value, only = $("#filter").value;
+  let list = BODIES.slice();
+  if (sort === "most") list.sort((a,b) => metCount(b)-metCount(a) || partCount(b)-partCount(a));
+  if (sort === "fewest") list.sort((a,b) => metCount(a)-metCount(b) || partCount(a)-partCount(b));
+  if (sort === "az") list.sort((a,b) => a.name.localeCompare(b.name));
+  const pr = only ? PRACTICES.filter(p => p.id === only) : PRACTICES;
+  $("#bodies").innerHTML = list.map(b => {
+    const m = metCount(b), p = partCount(b);
+    const meter = PRACTICES.map(x => `<span class="${b.p[x.id].s==='met'?'m':b.p[x.id].s==='partial'?'p':''}"></span>`).join("");
+    const rows = pr.map(x => { const f = b.p[x.id]; return `<tr><th scope="row">${x.name}</th><td class="st">${statusHTML(f.s)}</td><td class="ev">${esc(f.t)}<br><span>Source: ${sources(f.src)}</span></td></tr>`; }).join("");
+    return `<article class="body" id="body-${b.id}" aria-labelledby="h-${b.id}">
+      <header><h3 id="h-${b.id}">${esc(b.name)}</h3>
+      <p class="score">${m} of 9 practices met${p?` <small>plus ${p} partial</small>`:""}</p></header>
+      <div class="meter" aria-hidden="true">${meter}</div>
+      <p class="about">${esc(b.about)}</p>
+      ${b.note?`<p class="note">${esc(b.note)}</p>`:""}
+      <details class="findings-d"${b.id===BODIES[0].id?" open":""}><summary>Read the nine findings for ${esc(b.name)}</summary>
+      <table class="practices"><caption class="sr-only">${esc(b.name)}: access practices, status, and evidence. Checked ${CHECKED}.</caption>
+      <thead><tr><th scope="col">Practice</th><th scope="col">Status</th><th scope="col">What we found</th></tr></thead><tbody>${rows}</tbody></table></details>
+      <p style="font-size:.9rem;color:var(--ink-soft);margin:.6rem 0 0">Checked ${CHECKED}.</p>
+      <div class="card-actions"><button class="btn ghost" type="button" data-print="${b.id}">Print this report card</button>
+      <a class="btn ghost" href="#tip" data-tip="${b.id}">Send a correction</a></div>
+    </article>`;
+  }).join("");
+}
+
+function renderCompare(){
+  const head = `<thead><tr><th scope="col">Body</th>${PRACTICES.map(p=>`<th scope="col">${p.name}</th>`).join("")}<th scope="col">Met</th></tr></thead>`;
+  const body = BODIES.map(b => `<tr><th scope="row" style="font-weight:600">${esc(b.name)}</th>${PRACTICES.map(p => { const s=b.p[p.id].s; return `<td><span class="status s-${s}"><span class="dot" aria-hidden="true">${s==="met"?"✓":""}</span><span class="sr-only">${LABEL[s]}</span></span></td>`;}).join("")}<td><strong>${metCount(b)}</strong></td></tr>`).join("");
+  $("#compareTable").innerHTML = `<caption class="sr-only">Every body and every practice. Checked ${CHECKED}.</caption>` + head + `<tbody>${body}</tbody>`;
+}
+
+function renderSources(){ $("#sourceList").innerHTML = Object.values(SOURCES).map(([t,u]) => `<li><a href="${u}" rel="noopener">${esc(t)}</a></li>`).join(""); }
+
+function setupForms(){
+  $("#filter").innerHTML += PRACTICES.map(p => `<option value="${p.id}">${p.name}</option>`).join("");
+  $("#tipBody").innerHTML = BODIES.map(b => `<option value="${b.id}">${esc(b.name)}</option>`).join("") + `<option value="other">A body not listed yet</option>`;
+  $("#tipPractice").innerHTML = `<option value="">Any or several</option>` + PRACTICES.map(p => `<option value="${p.id}">${p.name}</option>`).join("");
+  $("#sort").addEventListener("change", renderBodies);
+  $("#filter").addEventListener("change", renderBodies);
+  document.addEventListener("click", e => {
+    const pb = e.target.closest("[data-print]");
+    if (pb){ const card = document.getElementById("body-"+pb.dataset.print); card.querySelector("details").open = true; document.body.classList.add("print-one"); card.classList.add("printing"); window.print(); }
+    const tb = e.target.closest("[data-tip]");
+    if (tb){ $("#tipBody").value = tb.dataset.tip; setTimeout(()=>$("#tipText").focus(),300); }
+  });
+  window.addEventListener("afterprint", () => { document.body.classList.remove("print-one","print-checklist"); document.querySelectorAll(".printing").forEach(c => c.classList.remove("printing")); });
+  $("#printChecklist").addEventListener("click", () => { document.body.classList.add("print-checklist"); window.print(); });
+  $("#copyStandard").addEventListener("click", async () => {
+    const text = [...document.querySelectorAll("#standardText p")].map(p => p.textContent).join("\n\n");
+    try { await navigator.clipboard.writeText(text); $("#copyMsg").textContent = "Copied. Paste it into your agenda template."; }
+    catch { $("#copyMsg").textContent = "Copy didn't work in this browser. Select the paragraph and copy it by hand."; }
+  });
+  $("#tipForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const txt = $("#tipText").value.trim();
+    if (!txt){ $("#tipMsg").textContent = "Describe what you saw first, then write the email."; $("#tipText").focus(); return; }
+    const body = $("#tipBody").selectedOptions[0].text, pr = $("#tipPractice").selectedOptions[0].text;
+    const subject = encodeURIComponent(`Open Door Index tip: ${body}`);
+    const mail = encodeURIComponent(`Body: ${body}\nPractice: ${pr}\n\n${txt}\n`);
+    $("#tipMsg").textContent = "Opening your email app.";
+    location.href = `mailto:meyeringn@gmail.com?subject=${subject}&body=${mail}`;
+  });
+  $("#csv").addEventListener("click", () => {
+    const rows = [["body","practice","status","finding","sources","checked"]];
+    BODIES.forEach(b => PRACTICES.forEach(p => { const f=b.p[p.id]; rows.push([b.name,p.name,LABEL[f.s],f.t,f.src.map(k=>SOURCES[k][1]).join(" "),"2026-11-01"]); }));
+    const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g,'""')}"`).join(",")).join("\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([csv],{type:"text/csv"}));
+    a.download = "open-door-index-2026-11.csv"; document.body.append(a); a.click(); a.remove();
+  });
+}
+
+function openFromHash(){ const m = location.hash.match(/^#body-([\w-]+)$/); if (m){ const d = document.querySelector(`#body-${m[1]} details`); if (d) d.open = true; } }
+window.addEventListener("hashchange", openFromHash);
+window.addEventListener("beforeprint", () => { if (!document.body.classList.contains("print-one")) document.querySelectorAll(".findings-d").forEach(d => d.open = true); });
+renderDoors(); renderFindings(); setupForms(); renderBodies(); renderCompare(); renderSources(); openFromHash();
+</script>
+<!-- Anonymous visit counting (GoatCounter): no cookies, page path only, never form input or query strings -->
+<script>window.goatcounter = { path: function () { return location.pathname; } };</script>
+<script data-goatcounter="https://meyeringn.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
