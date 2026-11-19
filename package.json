@@ -1,0 +1,16 @@
+{
+  "name": "open-door-index",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Nonpartisan scorecard of whether Disabled Philadelphians can take part in public meetings.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node tests/validate.mjs",
+    "test:browser": "python3 tests/smoke.py",
+    "build:data": "node scripts/build-data.mjs",
+    "serve": "python3 -m http.server 8000"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

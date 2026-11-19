@@ -1,0 +1,131 @@
+// Open Door Index data. Every finding here is published on the site.
+// Edit findings only with a source you have read yourself, then run:
+//   npm run build:data && npm test
+// This file is a plain script (window.ODI), not JSON, so index.html still works
+// when opened straight from disk (fetch() fails on file://).
+//
+// Finding shape: {s: status, t: what we found, src: [source keys], d?: "YYYY-MM-DD"}
+//   s   one of "met" | "partial" | "notfound" | "notyet"
+//   d   optional; the date this finding was last checked. Omit to use CHECKED_ISO.
+(function () {
+const CHECKED_ISO = "2026-11-01";
+const PRACTICES = [
+  {id:"agenda", name:"Agenda posted at least 24 hours ahead"},
+  {id:"remote", name:"Remote live participation (speak by video or phone)"},
+  {id:"written", name:"Written comment accepted"},
+  {id:"captions", name:"Live captions"},
+  {id:"asl", name:"ASL interpretation on request"},
+  {id:"contact", name:"Accommodation contact published for meetings"},
+  {id:"venue", name:"Venue accessibility described"},
+  {id:"recording", name:"Recordings archived for the public"},
+  {id:"materials", name:"Agenda in readable text"}
+];
+const LABEL = {met:"Met", partial:"Partial", notfound:"Not found", notyet:"Not yet audited"};
+const SOURCES = {
+  council_pc:["City Council: Offering public comment at Council sessions","https://phlcouncil.com/offering-public-comment-at-council-sessions-temp/"],
+  council_lap:["Philadelphia City Council Language Access Plan 2026","https://www.phila.gov/media/20260811100910/Philadelphia-City-Council-Language-Access-Plan-2026.pdf"],
+  phlgovtv:["PHLgovTV (City of Philadelphia)","https://www.phila.gov/departments/office-of-innovation-and-technology/phlgovtv/"],
+  legistar:["Jenkins Law Library: Agendas, minutes and more on City Council's Legislative Information Center","https://www.jenkinslaw.org/news/agendas-minutes-and-more-philadelphia-city-councils-legislative-information-center"],
+  boe:["Board of Education: Meetings","https://www.philasd.org/schoolboard/meetings/"],
+  pcpc_jun:["City Planning Commission agenda, June 4, 2026","https://www.phila.gov/media/20260602073537/PCPC-Agenda-June-4-2026.pdf"],
+  pcpc_sep:["City Planning Commission agenda, September 17, 2026","https://www.phila.gov/media/20260911120306/PCPC-Agenda-September-172026.pdf"],
+  pcpc_rec:["City Planning Commission: Recordings of public meetings","https://www.phila.gov/departments/philadelphia-city-planning-commission/recordings-of-public-meetings/"],
+  zba:["Participate in a Zoning Board of Adjustment hearing","https://phila.gov/services/zoning-planning-development/participate-in-a-zoning-board-of-adjustment-hearing/"],
+  ethics:["Board of Ethics: Public meetings","https://www.phila.gov/departments/board-of-ethics/about/public-meetings/"],
+  vote:["City Commissioners: Commissioner meetings","https://vote.phila.gov/resources-data/commissioner-meetings/commissioner-meetings"],
+  hc:["Historical Commission meeting FAQ, October 9, 2026","https://www.phila.gov/media/20261001101845/HC-770-Oct-2026-FAQ.pdf"],
+  art:["Art Commission agenda, June 10, 2026","https://www.phila.gov/media/20260605102639/2026.06.10_Art-Commission-agenda.pdf"],
+  csc:["Civil Service Commission","https://www.phila.gov/departments/civil-service-commission/"],
+  lir:["Board of License and Inspection Review","https://phila.gov/departments/board-of-license-and-inspection-review"],
+  mcpd:["Office for People with Disabilities: The Commission","https://www.phila.gov/departments/office-for-people-with-disabilities/commission/"],
+  opd:["Mayor's Office for People with Disabilities","https://www.phila.gov/departments/mayors-office-for-people-with-disabilities/"],
+  rm:["City of Philadelphia: Submit a reasonable modification request (Spanish-language page)","https://www.phila.gov/es/services/diversity-inclusion-accessibility-immigration/accessibility-services/submit-a-reasonable-modification-request/"],
+  sunshine:["Pennsylvania Municipal League: New public meeting requirements under the Sunshine Law (Act 65 of 2021)","https://www.pml.org/wp-content/uploads/2021/07/New-Public-Meeting-Requirements-Under-the-Sunshine-Law.pdf"],
+  sb1150:["Spotlight PA: Pennsylvania Sunshine Act loophole closed (October 21, 2026)","https://www.spotlightpa.org/news/2026/10/pennsylvania-sunshine-act-loophole-closed-capitol/"]
+};
+const NF = (src, txt) => ({s:"notfound", t: txt || "Not described in the materials reviewed.", src});
+const NY = (src, txt) => ({s:"notyet", t: txt, src});
+const BODIES = [
+ {id:"mcpd", name:"Mayor's Commission on People with Disabilities", about:"Advises the City on policies and programs for Disabled Philadelphians. Meets every other month.",
+  note:"Nico Meyering chairs this Commission and scored it first, using the same rules as every other body. Its public page currently documents almost none of these practices.",
+  p:{agenda:NF(["mcpd"],"The Commission's page lists no meeting schedule or agendas."),
+     remote:NF(["mcpd"]), written:NF(["mcpd"],"A contact is listed for comments, questions, and concerns, but not for meeting testimony."),
+     captions:NF(["mcpd"]), asl:NF(["mcpd"]),
+     contact:{s:"partial",t:"The Office for People with Disabilities lists ADA.Request@phila.gov and a Commission contact, but no meeting-specific accommodation instructions or deadline.",src:["mcpd","opd"]},
+     venue:NF(["mcpd"]), recording:NF(["mcpd"]), materials:NF(["mcpd"],"No agendas are published to check.")}},
+ {id:"council", name:"City Council", about:"Philadelphia's legislature. Stated meetings take public comment on bills and resolutions on the agenda.",
+  p:{agenda:NY(["legistar"],"Agendas are published in the Legislative Information Center; how far ahead was not verified."),
+     remote:NF(["council_pc"],"The public comment page describes in-person and advance sign-up only. A remote-meeting notice appears only in the page's older metadata."),
+     written:{s:"met",t:"Comments emailed by 3 p.m. the day before become part of the record, though they are not read aloud.",src:["council_pc"]},
+     captions:NF(["council_pc","phlgovtv"],"No live captioning of sessions is described."),
+     asl:{s:"met",t:"Council's 2026 Language Access Plan says ASL interpreters may be ordered through its Language Access Coordinator in advance.",src:["council_lap"]},
+     contact:{s:"met",t:"Speakers are told to tell the Chief Clerk's Office about accommodations when signing up, and the Language Access Coordinator's contact is published.",src:["council_pc","council_lap"]},
+     venue:NF(["council_pc"]),
+     recording:{s:"partial",t:"Sessions air live on PHLgovTV, and transcripts are available through the Legislative Information Center. An on-demand video archive is not described.",src:["phlgovtv","legistar"]},
+     materials:{s:"met",t:"Agendas and minutes are published as web pages in the Legislative Information Center.",src:["legistar"]}}},
+ {id:"boe", name:"Board of Education", about:"Governs the School District of Philadelphia.",
+  p:{agenda:{s:"met",t:"Action items are posted with the agenda “generally 3 weeks in advance.”",src:["boe"]},
+     remote:{s:"met",t:"Registered speakers may take part in person or remotely.",src:["boe"]},
+     written:{s:"met",t:"The Board accepts unlimited written testimony submitted on time by email or online form.",src:["boe"]},
+     captions:NF(["boe"]),
+     asl:NF(["boe"],"Translation can be requested by 4 p.m. the business day before, but ASL is not mentioned."),
+     contact:{s:"partial",t:"The page links to an accommodations section on the District's contact page; no meeting-specific contact or deadline.",src:["boe"]},
+     venue:NF(["boe"],"The address, 440 N. Broad Street, is given without access details."),
+     recording:{s:"met",t:"Meetings are livestreamed, on cable, and archived back to 2015.",src:["boe"]},
+     materials:NY(["boe"],"Agenda format not yet checked.")}},
+ {id:"pcpc", name:"City Planning Commission", about:"Reviews plans, zoning bills, and major development.",
+  p:{agenda:{s:"met",t:"The June 4, 2026 agenda's web address records an upload on June 2; the September 17 agenda's records September 11.",src:["pcpc_jun","pcpc_sep"]},
+     remote:{s:"met",t:"The public can join and speak by computer, tablet, smartphone, or telephone.",src:["pcpc_jun"]},
+     written:{s:"met",t:"Email comments to planning@phila.gov by noon on the day of the meeting.",src:["pcpc_jun"]},
+     captions:NF(["pcpc_jun"]), asl:NF(["pcpc_jun"]), contact:NF(["pcpc_jun"]), venue:NF(["pcpc_jun"],"The room, 1515 Arch Street, Room 18-029, is given without access details."),
+     recording:{s:"met",t:"Meetings are recorded, and recordings are posted online.",src:["pcpc_jun","pcpc_rec"]},
+     materials:{s:"met",t:"The agenda is a text-based PDF.",src:["pcpc_jun"]}}},
+ {id:"zba", name:"Zoning Board of Adjustment", about:"Hears zoning appeals and requests for variances.",
+  p:{agenda:NY(["zba"],"Cases are listed on the ZBA calendar; how far ahead is not stated."),
+     remote:{s:"met",t:"Join the Zoom webinar or call in, then raise your hand to speak.",src:["zba"]},
+     written:{s:"met",t:"Mail or email comments to RCOZBA@phila.gov with the case number.",src:["zba"]},
+     captions:NF(["zba"]), asl:NF(["zba"]), contact:NF(["zba"]), venue:NF(["zba"]),
+     recording:{s:"partial",t:"Hearings are recorded, but a public archive is not described.",src:["zba"]},
+     materials:NY(["zba"],"Calendar format not yet checked.")}},
+ {id:"ethics", name:"Board of Ethics", about:"Administers and enforces the City's ethics, campaign finance, and lobbying rules. Meets monthly.",
+  p:{agenda:NY(["ethics"],"Agendas for upcoming meetings are posted; how far ahead is not stated."),
+     remote:NF(["ethics"],"The page doesn't say how to join or speak remotely."), written:NF(["ethics"],"Public comment isn't mentioned."),
+     captions:NF(["ethics"]), asl:NF(["ethics"]), contact:NF(["ethics"]), venue:NF(["ethics"]),
+     recording:{s:"met",t:"Videos of past meetings are posted.",src:["ethics"]},
+     materials:NY(["ethics"],"Agenda format not yet checked.")}},
+ {id:"commissioners", name:"City Commissioners", about:"Philadelphia's board of elections.",
+  p:{agenda:NY(["vote"],"Agendas, including amended agendas, are listed by meeting date; how far ahead is not stated."),
+     remote:{s:"partial",t:"Meetings are livestreamed, but public comment is by email only.",src:["vote"]},
+     written:{s:"met",t:"Email phillyelection@phila.gov with “Public Comment” in the subject by 9:45 a.m. on meeting day.",src:["vote"]},
+     captions:NF(["vote"]), asl:NF(["vote"]), contact:NF(["vote"]), venue:NF(["vote"],"The address, 11311 Roosevelt Boulevard, is given without access details."),
+     recording:{s:"partial",t:"Transcripts are linked for some meetings; an archive of the livestreams is not described.",src:["vote"]},
+     materials:NY(["vote"],"Agenda format not yet checked.")}},
+ {id:"hc", name:"Historical Commission", about:"Designates and protects historic buildings and districts.",
+  p:{agenda:{s:"partial",t:"Meeting instructions for the October 9, 2026 meeting were uploaded October 1. The agenda's own posting time was not separately checked.",src:["hc"]},
+     remote:{s:"met",t:"Join by Zoom or phone and raise your hand to speak. Public participants are audio only.",src:["hc"]},
+     written:{s:"met",t:"Email preservation@phila.gov until noon one business day before the meeting.",src:["hc"]},
+     captions:NF(["hc"]), asl:NF(["hc"]), contact:NF(["hc"],"The only contacts are for questions about comments, not accommodations."),
+     venue:{s:"partial",t:"Describes the lobby security check and the elevator route to the 18th floor, but no other access details.",src:["hc"]},
+     recording:{s:"met",t:"Meetings are recorded and posted on the Commission's recordings page.",src:["hc"]},
+     materials:{s:"met",t:"Meeting instructions are a text-based PDF.",src:["hc"]}}},
+ {id:"art", name:"Art Commission", about:"Reviews the design of public buildings, public art, and signs.",
+  p:{agenda:{s:"met",t:"The June 10, 2026 agenda's web address records an upload on June 5.",src:["art"]},
+     remote:{s:"met",t:"Join by Zoom and raise your hand, or call in and press *9.",src:["art"]},
+     written:{s:"met",t:"Email artcommission@phila.gov before noon the day before the meeting.",src:["art"]},
+     captions:NF(["art"]), asl:NF(["art"]), contact:NF(["art"]), venue:NF(["art"]),
+     recording:{s:"met",t:"Meetings are recorded, with past recordings posted online.",src:["art"]},
+     materials:{s:"met",t:"The agenda is a text-based PDF.",src:["art"]}}},
+ {id:"csc", name:"Civil Service Commission", about:"Hears appeals from City employees and oversees civil service rules.",
+  p:{agenda:NY(["csc"],"Monthly meeting agendas are linked; how far ahead is not stated."),
+     remote:NF(["csc"],"Virtual hearings are listed, but how the public can take part is not explained."),
+     written:NF(["csc"]), captions:NF(["csc"]), asl:NF(["csc"]), contact:NF(["csc"]), venue:NF(["csc"]), recording:NF(["csc"]),
+     materials:NY(["csc"],"Agenda format not yet checked.")}},
+ {id:"lir", name:"Board of License & Inspection Review", about:"Hears appeals of permits, violations, and notices from Licenses & Inspections.",
+  p:{agenda:NY(["lir"],"Scheduled appeals are on the L&I Appeals Calendar; how far ahead is not stated."),
+     remote:{s:"partial",t:"Meetings are held virtually and in person, by Zoom or phone, but a public comment process is not described.",src:["lir"]},
+     written:NF(["lir"]), captions:NF(["lir"]), asl:NF(["lir"]), contact:NF(["lir"]), venue:NF(["lir"]),
+     recording:{s:"met",t:"Past public meetings are on a YouTube playlist.",src:["lir"]},
+     materials:NY(["lir"],"Calendar format not yet checked.")}}
+];
+window.ODI = { CHECKED_ISO, PRACTICES, LABEL, SOURCES, BODIES };
+})();
