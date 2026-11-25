@@ -1,7 +1,7 @@
 // Open Door Index validator. Run with `npm test` (or `node tests/validate.mjs`).
 // No dependencies. Exits 1 if any check fails, so CI and Claude can both rely on it.
 import { readFileSync } from 'node:fs';
-import { loadData, rows, toCSV, toJSON } from '../scripts/load-data.mjs';
+import { loadData, rows, toCSV, toJSON, prerender, handWritten } from '../scripts/load-data.mjs';
 
 const root = new URL('..', import.meta.url);
 const read = p => readFileSync(new URL(p, root), 'utf8');
@@ -54,6 +54,9 @@ for (const b of BODIES) {
 if (fails.length === 0) { // only meaningful once the data itself is sound
   check(read('data/open-door-index.csv') === toCSV(rows(ODI)), 'data/open-door-index.csv is out of date. Run `npm run build:data`.');
   check(read('data/open-door-index.json') === toJSON(ODI), 'data/open-door-index.json is out of date. Run `npm run build:data`.');
+  let built = null;
+  try { built = prerender(html, ODI); } catch (e) { fail(e.message); }
+  check(built === null || built === html, 'The findings written into index.html are out of date. Run `npm run build:data`.');
 }
 
 // ---------- 3. Copy that repeats the data stays in sync ----------
@@ -80,17 +83,20 @@ const rr = readme.match(/^- (\w+) bod(?:y|ies) lets? residents speak live from h
 check(rr && rr[1].toLowerCase() === word(met('remote')), `README remote stat should start "${cap(word(met('remote')))}"`);
 
 // Every "checked <date>" written into the page or footer matches CHECKED_ISO
-for (const m of html.matchAll(/[Cc]hecked (\w+ \d{1,2}, \d{4})/g)) check(m[1] === longDate, `index.html says "checked ${m[1]}" but CHECKED_ISO is ${longDate}`);
+for (const m of handWritten(html).matchAll(/[Cc]hecked (\w+ \d{1,2}, \d{4})/g)) check(m[1] === longDate, `index.html says "checked ${m[1]}" but CHECKED_ISO is ${longDate}`);
 check(html.includes(`Data last verified: ${monthYear}`), `Footer should say "Data last verified: ${monthYear}"`);
 check(new RegExp(`City Council and ${word(n - 1)} city boards`, 'i').test(html), `Lede should say "City Council and ${word(n - 1)} city boards"`);
 check(html.includes(`${n - 1} city boards and commissions`), `Meta description should say "${n - 1} city boards and commissions"`);
 check(html.includes(`${cap(word(n))} Philadelphia public bodies`), `Share description should say "${cap(word(n))} Philadelphia public bodies"`);
-check(!/const (BODIES|SOURCES|PRACTICES)\s*=/.test(html + app), 'Findings data must live only in data/bodies.js');
+check(!/const (BODIES|SOURCES|PRACTICES)\s*=/.test(html + app + read('js/render.js')), 'Findings data must live only in data/bodies.js');
+check(html.includes('<script src="js/render.js"></script>'), 'index.html must load js/render.js before js/app.js');
 check(html.includes(`"dateModified":"${CHECKED_ISO}"`), `Dataset metadata (JSON-LD) should say "dateModified":"${CHECKED_ISO}"`);
 
 // ---------- 4. Language ----------
 const OFFICIAL = /(Mayor's )?(Commission|Office) (on|for) People with Disabilities/g;
-const copy = { 'index.html': html, 'data/bodies.js': dataSrc, 'js/app.js': app, 'README.md': readme, 'ACCESSIBILITY.md': a11y };
+const copy = { 'index.html': html, 'data/bodies.js': dataSrc, 'js/app.js': app, 'js/render.js': read('js/render.js'), 'README.md': readme, 'ACCESSIBILITY.md': a11y,
+  'CORRECTIONS.md': read('CORRECTIONS.md'), 'LICENSE-DATA.md': read('LICENSE-DATA.md'),
+  '.github/ISSUE_TEMPLATE/correction.yml': read('.github/ISSUE_TEMPLATE/correction.yml'), '.github/ISSUE_TEMPLATE/accessibility.yml': read('.github/ISSUE_TEMPLATE/accessibility.yml') };
 for (const [file, text] of Object.entries(copy)) {
   const t = text.replace(OFFICIAL, '');
   for (const bad of [/people with disabilit/i, /persons? with (a )?disabilit/i, /handicapped/i, /wheelchair[- ]bound/i, /confined to a wheelchair/i, /suffers? from/i, /special needs/i, /differently[- ]abled/i])

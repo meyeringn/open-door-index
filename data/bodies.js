@@ -38,9 +38,10 @@ const SOURCES = {
   csc:["Civil Service Commission","https://www.phila.gov/departments/civil-service-commission/"],
   lir:["Board of License and Inspection Review","https://phila.gov/departments/board-of-license-and-inspection-review"],
   mcpd:["Office for People with Disabilities: The Commission","https://www.phila.gov/departments/office-for-people-with-disabilities/commission/"],
-  opd:["Mayor's Office for People with Disabilities","https://www.phila.gov/departments/mayors-office-for-people-with-disabilities/"],
+  opd:["Office for People with Disabilities","https://www.phila.gov/departments/office-for-people-with-disabilities/"],
   rm:["City of Philadelphia: Submit a reasonable modification request (Spanish-language page)","https://www.phila.gov/es/services/diversity-inclusion-accessibility-immigration/accessibility-services/submit-a-reasonable-modification-request/"],
   sunshine:["Pennsylvania Municipal League: New public meeting requirements under the Sunshine Law (Act 65 of 2021)","https://www.pml.org/wp-content/uploads/2021/07/New-Public-Meeting-Requirements-Under-the-Sunshine-Law.pdf"],
+  titleii:["U.S. Department of Justice: ADA Title II web and mobile app accessibility rule","https://www.ada.gov/title-ii-web-rule/"],
   sb1150:["Spotlight PA: Pennsylvania Sunshine Act loophole closed (October 21, 2026)","https://www.spotlightpa.org/news/2026/10/pennsylvania-sunshine-act-loophole-closed-capitol/"]
 };
 const NF = (src, txt) => ({s:"notfound", t: txt || "Not described in the materials reviewed.", src});

@@ -1,0 +1,25 @@
+name: Accessibility barrier
+description: Something on the Open Door Index site doesn't work for you.
+title: "Accessibility barrier: "
+labels: ["accessibility"]
+body:
+  - type: markdown
+    attributes:
+      value: I want to know about every barrier. I aim to reply within 5 business days. You can also email meyeringn@gmail.com with "Accessibility" in the subject.
+  - type: textarea
+    id: trying
+    attributes:
+      label: What were you trying to do?
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: input
+    id: setup
+    attributes:
+      label: Device, browser, and any assistive technology
+      placeholder: "For example: iPhone, Safari, VoiceOver; or Windows, Chrome, NVDA, 200% zoom"

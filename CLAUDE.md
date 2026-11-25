@@ -4,12 +4,14 @@ Nonpartisan, evidence-based scorecard of whether Disabled Philadelphians can tak
 
 ## Commands
 - `npm test`: validates data, sources, dates, README stats, language, and color contrast. Must PASS before any commit.
-- `npm run build:data`: rewrites `data/open-door-index.csv` and `.json` from `data/bodies.js`. Run after every data edit; `npm test` fails if they're stale.
-- `npm run test:browser`: offline Playwright smoke test at 1280px and 390px (needs `pip install playwright && python -m playwright install chromium`). Add `SCREENSHOTS=shots` to save full-page screenshots, then look at them.
+- `npm run build:data`: rewrites `data/open-door-index.csv` and `.json` from `data/bodies.js`, and writes the findings into `index.html` between `<!-- build:name -->` markers. Run after every data or `js/render.js` edit; `npm test` fails if any of them are stale. Never hand-edit inside the markers.
+- `npm run check:links`: checks every source still opens (needs network; runs weekly in Actions with `--archive` to save Internet Archive copies).
+- `npm run test:browser`: offline Playwright smoke test, axe-core scan, and no-JavaScript check at 1280px, 390px, and 320px (needs `pip install playwright && python -m playwright install chromium`, plus `npm install --no-save axe-core` for the axe scan). Add `SCREENSHOTS=shots` to save full-page screenshots, then look at them.
 
 ## Where things live
 - `data/bodies.js`: every finding, source, and the `CHECKED_ISO` date. A plain script that sets `window.ODI`, NOT JSON, because `fetch()` fails on `file://`.
-- `js/app.js`: rendering only. Never put a finding, source, or date here.
+- `js/render.js`: the page's markup as pure functions, used by both the browser and the build. `js/app.js`: controls and animation only. Never put a finding, source, or date in either.
+- `CORRECTIONS.md`: add a row for every change to a finding, score, or method.
 - `index.html`: markup and CSS. Design tokens are in `:root` at the top. Read `docs/DESIGN.md` before visual changes. Libre Caslon is for large headlines and numbers only; reading text stays in Public Sans. Dark bands carry the `on-dark` class so focus rings turn gold. Text never sits on the brick pattern.
 
 ## Rules

@@ -1,7 +1,9 @@
 {
   "name": "Open Door Index",
   "url": "https://meyeringn.github.io/open-door-index/",
-  "license": "MIT",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "Open Door Index by Nico Meyering, https://meyeringn.github.io/open-door-index/",
   "checked": "2026-11-01",
   "statuses": {
     "met": "Met",
@@ -50,83 +52,108 @@
   "sources": {
     "council_pc": {
       "title": "City Council: Offering public comment at Council sessions",
-      "url": "https://phlcouncil.com/offering-public-comment-at-council-sessions-temp/"
+      "url": "https://phlcouncil.com/offering-public-comment-at-council-sessions-temp/",
+      "archive": "https://web.archive.org/web/20261101/https://phlcouncil.com/offering-public-comment-at-council-sessions-temp/"
     },
     "council_lap": {
       "title": "Philadelphia City Council Language Access Plan 2026",
-      "url": "https://www.phila.gov/media/20260811100910/Philadelphia-City-Council-Language-Access-Plan-2026.pdf"
+      "url": "https://www.phila.gov/media/20260811100910/Philadelphia-City-Council-Language-Access-Plan-2026.pdf",
+      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/media/20260811100910/Philadelphia-City-Council-Language-Access-Plan-2026.pdf"
     },
     "phlgovtv": {
       "title": "PHLgovTV (City of Philadelphia)",
-      "url": "https://www.phila.gov/departments/office-of-innovation-and-technology/phlgovtv/"
+      "url": "https://www.phila.gov/departments/office-of-innovation-and-technology/phlgovtv/",
+      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/departments/office-of-innovation-and-technology/phlgovtv/"
     },
     "legistar": {
       "title": "Jenkins Law Library: Agendas, minutes and more on City Council's Legislative Information Center",
-      "url": "https://www.jenkinslaw.org/news/agendas-minutes-and-more-philadelphia-city-councils-legislative-information-center"
+      "url": "https://www.jenkinslaw.org/news/agendas-minutes-and-more-philadelphia-city-councils-legislative-information-center",
+      "archive": "https://web.archive.org/web/20261101/https://www.jenkinslaw.org/news/agendas-minutes-and-more-philadelphia-city-councils-legislative-information-center"
     },
     "boe": {
       "title": "Board of Education: Meetings",
-      "url": "https://www.philasd.org/schoolboard/meetings/"
+      "url": "https://www.philasd.org/schoolboard/meetings/",
+      "archive": "https://web.archive.org/web/20261101/https://www.philasd.org/schoolboard/meetings/"
     },
     "pcpc_jun": {
       "title": "City Planning Commission agenda, June 4, 2026",
-      "url": "https://www.phila.gov/media/20260602073537/PCPC-Agenda-June-4-2026.pdf"
+      "url": "https://www.phila.gov/media/20260602073537/PCPC-Agenda-June-4-2026.pdf",
+      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/media/20260602073537/PCPC-Agenda-June-4-2026.pdf"
     },
     "pcpc_sep": {
       "title": "City Planning Commission agenda, September 17, 2026",
-      "url": "https://www.phila.gov/media/20260911120306/PCPC-Agenda-September-172026.pdf"
+      "url": "https://www.phila.gov/media/20260911120306/PCPC-Agenda-September-172026.pdf",
+      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/media/20260911120306/PCPC-Agenda-September-172026.pdf"
     },
     "pcpc_rec": {
       "title": "City Planning Commission: Recordings of public meetings",
-      "url": "https://www.phila.gov/departments/philadelphia-city-planning-commission/recordings-of-public-meetings/"
+      "url": "https://www.phila.gov/departments/philadelphia-city-planning-commission/recordings-of-public-meetings/",
+      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/departments/philadelphia-city-planning-commission/recordings-of-public-meetings/"
     },
     "zba": {
       "title": "Participate in a Zoning Board of Adjustment hearing",
-      "url": "https://phila.gov/services/zoning-planning-development/participate-in-a-zoning-board-of-adjustment-hearing/"
+      "url": "https://phila.gov/services/zoning-planning-development/participate-in-a-zoning-board-of-adjustment-hearing/",
+      "archive": "https://web.archive.org/web/20261101/https://phila.gov/services/zoning-planning-development/participate-in-a-zoning-board-of-adjustment-hearing/"
     },
     "ethics": {
       "title": "Board of Ethics: Public meetings",
-      "url": "https://www.phila.gov/departments/board-of-ethics/about/public-meetings/"
+      "url": "https://www.phila.gov/departments/board-of-ethics/about/public-meetings/",
+      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/departments/board-of-ethics/about/public-meetings/"
     },
     "vote": {
       "title": "City Commissioners: Commissioner meetings",
-      "url": "https://vote.phila.gov/resources-data/commissioner-meetings/commissioner-meetings"
+      "url": "https://vote.phila.gov/resources-data/commissioner-meetings/commissioner-meetings",
+      "archive": "https://web.archive.org/web/20261101/https://vote.phila.gov/resources-data/commissioner-meetings/commissioner-meetings"
     },
     "hc": {
       "title": "Historical Commission meeting FAQ, October 9, 2026",
-      "url": "https://www.phila.gov/media/20261001101845/HC-770-Oct-2026-FAQ.pdf"
+      "url": "https://www.phila.gov/media/20261001101845/HC-770-Oct-2026-FAQ.pdf",
+      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/media/20261001101845/HC-770-Oct-2026-FAQ.pdf"
     },
     "art": {
       "title": "Art Commission agenda, June 10, 2026",
-      "url": "https://www.phila.gov/media/20260605102639/2026.06.10_Art-Commission-agenda.pdf"
+      "url": "https://www.phila.gov/media/20260605102639/2026.06.10_Art-Commission-agenda.pdf",
+      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/media/20260605102639/2026.06.10_Art-Commission-agenda.pdf"
     },
     "csc": {
       "title": "Civil Service Commission",
-      "url": "https://www.phila.gov/departments/civil-service-commission/"
+      "url": "https://www.phila.gov/departments/civil-service-commission/",
+      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/departments/civil-service-commission/"
     },
     "lir": {
       "title": "Board of License and Inspection Review",
-      "url": "https://phila.gov/departments/board-of-license-and-inspection-review"
+      "url": "https://phila.gov/departments/board-of-license-and-inspection-review",
+      "archive": "https://web.archive.org/web/20261101/https://phila.gov/departments/board-of-license-and-inspection-review"
     },
     "mcpd": {
       "title": "Office for People with Disabilities: The Commission",
-      "url": "https://www.phila.gov/departments/office-for-people-with-disabilities/commission/"
+      "url": "https://www.phila.gov/departments/office-for-people-with-disabilities/commission/",
+      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/departments/office-for-people-with-disabilities/commission/"
     },
     "opd": {
-      "title": "Mayor's Office for People with Disabilities",
-      "url": "https://www.phila.gov/departments/mayors-office-for-people-with-disabilities/"
+      "title": "Office for People with Disabilities",
+      "url": "https://www.phila.gov/departments/office-for-people-with-disabilities/",
+      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/departments/office-for-people-with-disabilities/"
     },
     "rm": {
       "title": "City of Philadelphia: Submit a reasonable modification request (Spanish-language page)",
-      "url": "https://www.phila.gov/es/services/diversity-inclusion-accessibility-immigration/accessibility-services/submit-a-reasonable-modification-request/"
+      "url": "https://www.phila.gov/es/services/diversity-inclusion-accessibility-immigration/accessibility-services/submit-a-reasonable-modification-request/",
+      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/es/services/diversity-inclusion-accessibility-immigration/accessibility-services/submit-a-reasonable-modification-request/"
     },
     "sunshine": {
       "title": "Pennsylvania Municipal League: New public meeting requirements under the Sunshine Law (Act 65 of 2021)",
-      "url": "https://www.pml.org/wp-content/uploads/2021/07/New-Public-Meeting-Requirements-Under-the-Sunshine-Law.pdf"
+      "url": "https://www.pml.org/wp-content/uploads/2021/07/New-Public-Meeting-Requirements-Under-the-Sunshine-Law.pdf",
+      "archive": "https://web.archive.org/web/20261101/https://www.pml.org/wp-content/uploads/2021/07/New-Public-Meeting-Requirements-Under-the-Sunshine-Law.pdf"
+    },
+    "titleii": {
+      "title": "U.S. Department of Justice: ADA Title II web and mobile app accessibility rule",
+      "url": "https://www.ada.gov/title-ii-web-rule/",
+      "archive": "https://web.archive.org/web/20261101/https://www.ada.gov/title-ii-web-rule/"
     },
     "sb1150": {
       "title": "Spotlight PA: Pennsylvania Sunshine Act loophole closed (October 21, 2026)",
-      "url": "https://www.spotlightpa.org/news/2026/10/pennsylvania-sunshine-act-loophole-closed-capitol/"
+      "url": "https://www.spotlightpa.org/news/2026/10/pennsylvania-sunshine-act-loophole-closed-capitol/",
+      "archive": "https://web.archive.org/web/20261101/https://www.spotlightpa.org/news/2026/10/pennsylvania-sunshine-act-loophole-closed-capitol/"
     }
   },
   "bodies": [
