@@ -100,6 +100,16 @@
       "url": "https://phila.gov/services/zoning-planning-development/participate-in-a-zoning-board-of-adjustment-hearing/",
       "archive": "https://web.archive.org/web/20261125/https://phila.gov/services/zoning-planning-development/participate-in-a-zoning-board-of-adjustment-hearing/"
     },
+    "zba_meetings": {
+      "title": "Zoning Board of Adjustment: Public meetings",
+      "url": "https://www.phila.gov/departments/zoning-board-of-adjustment/public-meetings/",
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/departments/zoning-board-of-adjustment/public-meetings/"
+    },
+    "zba_nov18": {
+      "title": "Zoning Board of Adjustment agenda, November 18, 2026, 9:30 a.m.",
+      "url": "https://www.phila.gov/media/20261113113359/ZBA-Agenda-2026-11-18-930am-created-2026-11-13-1132.pdf",
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/media/20261113113359/ZBA-Agenda-2026-11-18-930am-created-2026-11-13-1132.pdf"
+    },
     "ethics": {
       "title": "Board of Ethics: Public meetings",
       "url": "https://www.phila.gov/departments/board-of-ethics/about/public-meetings/",
@@ -512,10 +522,11 @@
       "about": "Hears zoning appeals and requests for variances.",
       "findings": {
         "agenda": {
-          "status": "notyet",
-          "finding": "Cases are listed on the ZBA appeals calendar, an interactive page that couldn't be read for this review. How far ahead is not stated.",
+          "status": "met",
+          "finding": "Hearing agendas are posted on the Board's public meetings page. The web addresses of the November 18, 2026 agendas record an upload on November 13.",
           "sources": [
-            "zba"
+            "zba_meetings",
+            "zba_nov18"
           ],
           "checked": "2026-11-25"
         },
@@ -568,18 +579,19 @@
           "checked": "2026-11-25"
         },
         "recording": {
-          "status": "partial",
-          "finding": "Hearings are recorded, but a public archive is not described.",
+          "status": "met",
+          "finding": "Hearings are recorded, and recordings are posted on the Board's public meetings page as a courtesy.",
           "sources": [
-            "zba"
+            "zba",
+            "zba_meetings"
           ],
           "checked": "2026-11-25"
         },
         "materials": {
-          "status": "notyet",
-          "finding": "The appeals calendar is an interactive page that couldn't be read for this review.",
+          "status": "met",
+          "finding": "The November 18, 2026 agenda is a text-based PDF.",
           "sources": [
-            "zba"
+            "zba_nov18"
           ],
           "checked": "2026-11-25"
         }

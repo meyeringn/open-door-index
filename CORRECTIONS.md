@@ -6,6 +6,9 @@ To suggest a correction, use the [tip form](https://meyeringn.github.io/open-doo
 
 | Date | Body | Practice | Change | Source |
 | --- | --- | --- | --- | --- |
+| 2026-11-25 | Zoning Board of Adjustment | Agenda posted 24 hours ahead | Not yet audited -> Met. The November 18, 2026 agendas' web addresses record an upload on November 13. Lead from a reader tip; checked against the Board's own page. | [ZBA public meetings](https://www.phila.gov/departments/zoning-board-of-adjustment/public-meetings/) |
+| 2026-11-25 | Zoning Board of Adjustment | Agenda in readable text | Not yet audited -> Met. The November 18, 2026 agenda is a text-based PDF. | [Agenda, Nov 18, 2026](https://www.phila.gov/media/20261113113359/ZBA-Agenda-2026-11-18-930am-created-2026-11-13-1132.pdf) |
+| 2026-11-25 | Zoning Board of Adjustment | Recordings archived | Partial -> Met. The Board's public meetings page posts hearing recordings. Score 2 -> 5 of 9 with the two rows above. | [ZBA public meetings](https://www.phila.gov/departments/zoning-board-of-adjustment/public-meetings/) |
 | 2026-11-25 | All | All | Full re-check of every source; the check date moved from November 1 to November 25, 2026. Each finding still marked Not yet audited now says why (interactive calendars, a portal that couldn't be opened, or no agenda posted between meetings). | Sources list on the site |
 | 2026-11-25 | City Commissioners | Agenda in readable text | Not yet audited -> Met. The November 17, 2026 agenda is a text-based PDF. Score 1 -> 2 of 9. | [Agenda, Nov 17, 2026](https://vote.phila.gov/media/Agenda_for_11_17_26.pdf) |
 | 2026-11-25 | City Commissioners | Written comment | Met, unchanged. The deadline now matches the page, which says "4:45 A.M" on meeting day (it said 9:45 a.m. on November 1). | [Commissioner meetings](https://vote.phila.gov/resources-data/commissioner-meetings/commissioner-meetings) |
