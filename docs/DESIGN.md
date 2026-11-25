@@ -6,7 +6,7 @@
 
 ## The two ideas
 
-1. **A block of rowhouses.** The eleven bodies stand side by side as doorways in one brick facade, under a dentil cornice, on a poured sidewalk. Each door opens wider for every documented practice (partial opens half as far). Each door sits on a white marble stoop until the body documents a step-free meeting room; then the stoop is drawn as a ramp. Every scorecard repeats its own doorway, already open to its score.
+1. **A block of rowhouses.** The eleven bodies stand side by side as doorways in one brick facade, under a dentil cornice, on a poured sidewalk. Each door opens wider for every documented practice. Partial findings don't move it, the same way they don't count toward the score. Each door sits on a white marble stoop until the body documents a step-free meeting room; then the stoop is drawn as a ramp. Every scorecard repeats its own doorway, already open to its score.
 2. **A broadside.** Public meetings start with a public notice, and Philadelphia printed the most famous ones (the Declaration's first broadside was set in Caslon here in 1776). Headlines use Libre Caslon Display, section heads sit under a double rule like a printed notice, and the Open Door standard is a framed notice anyone can post.
 
 The drawings never add information that isn't also in text: door links announce the body, its count, and whether step-free access is described.

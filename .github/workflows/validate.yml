@@ -19,11 +19,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install Playwright
+      - name: Install Playwright and axe-core
         run: |
           pip install playwright
           python -m playwright install --with-deps chromium
-      - name: Browser smoke test (1280px and 390px)
+          npm install --no-save --no-package-lock axe-core@4
+      - name: Browser smoke test and axe scan (1280px, 390px, 320px)
         run: SCREENSHOTS=shots python tests/smoke.py
       - uses: actions/upload-artifact@v4
         if: always()

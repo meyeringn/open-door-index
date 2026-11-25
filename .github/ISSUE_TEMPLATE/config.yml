@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Send a tip by email instead
+    url: https://meyeringn.github.io/open-door-index/#tip
+    about: The tip form on the site writes an email in your own mail app. No GitHub account needed.

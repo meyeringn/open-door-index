@@ -10,8 +10,8 @@ Open Door Index aims to meet the **Web Content Accessibility Guidelines (WCAG) 2
 
 ## How it's tested
 
-- **Automated:** scanned with axe-core against WCAG 2.1 A and AA rules before launch, with zero issues, and weekly from then on. [See the latest results](https://github.com/meyeringn/meyeringn.github.io/actions/workflows/accessibility-check.yml).
-- **On every change:** an offline browser test checks the page at 1280px and 390px wide: no sideways scrolling, a skip link first in the tab order, short status messages for sorting instead of re-reading the whole scorecard, and descriptive door links.
+- **Automated:** every change is scanned with axe-core against WCAG 2.0, 2.1, and 2.2 A and AA rules at 1280px, 390px, and 320px, in this repository's own tests ([see the latest results](https://github.com/meyeringn/open-door-index/actions/workflows/validate.yml)). The live site is also scanned weekly with my other tools ([results](https://github.com/meyeringn/meyeringn.github.io/actions/workflows/accessibility-check.yml)).
+- **On every change:** an offline browser test checks the page at 1280px, 390px, and 320px wide: no sideways scrolling, a skip link first in the tab order, short status messages for sorting instead of re-reading the whole scorecard, and descriptive door links. It also checks that every finding is readable with JavaScript turned off.
 - **Reduced motion:** the tool's single animation turns off when your device asks for reduced motion.
 - **Built in:** Public Sans for all reading text (Libre Caslon only for large headlines and numbers), a high-contrast palette with every color pair checked by `npm test`, status shown by words and symbols, never color alone, and printable report cards.
 - **Manual review:** not yet completed. Planned: keyboard-only use, NVDA and VoiceOver screen readers, and 200% zoom on a phone-width screen.
@@ -27,6 +27,8 @@ Automated tools catch only some barriers. Until the manual review is done, pleas
 | The tip form opens your own email app rather than sending directly. | People without a mail app set up | Email meyeringn@gmail.com directly, or open a GitHub issue. | By design: no data is collected by the site |
 
 ## Recently fixed
+
+- **November 2026 (launch readiness):** every finding, the comparison table, and the source list are now part of the page itself, so they work without JavaScript and in reader modes. On small phones the doors now sit three across, with a little more room at 320px, so long names like "Commissioners" no longer break mid-word (checked by the browser test). The "Your rights" section links its sources inline.
 
 - **November 2026 (redesign):** the keyboard focus ring in the navy top bar was blue on navy, about 2.6:1, below the 3:1 that WCAG 2.4.13 and 1.4.11 ask for. Every dark band now uses a gold ring (8:1 or better). Opening a shared link to one body (for example `#body-council`) now lands on that card with its findings open; before, the page stayed at the top. Door drawings keep their outlines in Windows High Contrast mode.
 

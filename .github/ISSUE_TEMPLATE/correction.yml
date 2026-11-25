@@ -1,0 +1,60 @@
+name: Correction or tip
+description: A finding is wrong, out of date, or a body has published something new.
+title: "Correction: [body], [practice]"
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you. Every correction is checked against the body's own published materials and dated before it changes a score. It will be listed in CORRECTIONS.md.
+  - type: dropdown
+    id: body
+    attributes:
+      label: Which body?
+      options:
+        - Mayor's Commission on People with Disabilities
+        - City Council
+        - Board of Education
+        - City Planning Commission
+        - Zoning Board of Adjustment
+        - Board of Ethics
+        - City Commissioners
+        - Historical Commission
+        - Art Commission
+        - Civil Service Commission
+        - Board of License & Inspection Review
+        - A body not listed yet
+    validations:
+      required: true
+  - type: dropdown
+    id: practice
+    attributes:
+      label: Which practice?
+      options:
+        - Any or several
+        - Agenda posted at least 24 hours ahead
+        - Remote live participation (speak by video or phone)
+        - Written comment accepted
+        - Live captions
+        - ASL interpretation on request
+        - Accommodation contact published for meetings
+        - Venue accessibility described
+        - Recordings archived for the public
+        - Agenda in readable text
+  - type: textarea
+    id: what
+    attributes:
+      label: What did you see, and where?
+      description: A link to the page or document helps most. If you saw it at a meeting, give the date.
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link to the page or document
+      placeholder: https://
+  - type: checkboxes
+    id: role
+    attributes:
+      label: Are you writing for the body itself?
+      options:
+        - label: Yes, I work for or serve on this body
