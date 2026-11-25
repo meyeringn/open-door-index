@@ -4,7 +4,7 @@
   "license": "CC-BY-4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Open Door Index by Nico Meyering, https://meyeringn.github.io/open-door-index/",
-  "checked": "2026-11-01",
+  "checked": "2026-11-25",
   "statuses": {
     "met": "Met",
     "partial": "Partial",
@@ -53,107 +53,132 @@
     "council_pc": {
       "title": "City Council: Offering public comment at Council sessions",
       "url": "https://phlcouncil.com/offering-public-comment-at-council-sessions-temp/",
-      "archive": "https://web.archive.org/web/20261101/https://phlcouncil.com/offering-public-comment-at-council-sessions-temp/"
+      "archive": "https://web.archive.org/web/20261125/https://phlcouncil.com/offering-public-comment-at-council-sessions-temp/"
     },
     "council_lap": {
       "title": "Philadelphia City Council Language Access Plan 2026",
       "url": "https://www.phila.gov/media/20260811100910/Philadelphia-City-Council-Language-Access-Plan-2026.pdf",
-      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/media/20260811100910/Philadelphia-City-Council-Language-Access-Plan-2026.pdf"
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/media/20260811100910/Philadelphia-City-Council-Language-Access-Plan-2026.pdf"
     },
     "phlgovtv": {
       "title": "PHLgovTV (City of Philadelphia)",
       "url": "https://www.phila.gov/departments/office-of-innovation-and-technology/phlgovtv/",
-      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/departments/office-of-innovation-and-technology/phlgovtv/"
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/departments/office-of-innovation-and-technology/phlgovtv/"
     },
     "legistar": {
-      "title": "Jenkins Law Library: Agendas, minutes and more on City Council's Legislative Information Center",
-      "url": "https://www.jenkinslaw.org/news/agendas-minutes-and-more-philadelphia-city-councils-legislative-information-center",
-      "archive": "https://web.archive.org/web/20261101/https://www.jenkinslaw.org/news/agendas-minutes-and-more-philadelphia-city-councils-legislative-information-center"
+      "title": "City Council: Legislative Information Center calendar",
+      "url": "https://phila.legistar.com/Calendar.aspx",
+      "archive": "https://web.archive.org/web/20261125/https://phila.legistar.com/Calendar.aspx"
+    },
+    "council_agenda": {
+      "title": "City Council agenda, November 19, 2026 (accessible web version)",
+      "url": "https://phila.legistar.com/View.ashx?M=AADA&ID=1457594&GUID=7B28EACC-F1C2-409F-82DD-8CEB26FD22F3",
+      "archive": "https://web.archive.org/web/20261125/https://phila.legistar.com/View.ashx?M=AADA&ID=1457594&GUID=7B28EACC-F1C2-409F-82DD-8CEB26FD22F3"
     },
     "boe": {
       "title": "Board of Education: Meetings",
       "url": "https://www.philasd.org/schoolboard/meetings/",
-      "archive": "https://web.archive.org/web/20261101/https://www.philasd.org/schoolboard/meetings/"
+      "archive": "https://web.archive.org/web/20261125/https://www.philasd.org/schoolboard/meetings/"
     },
     "pcpc_jun": {
       "title": "City Planning Commission agenda, June 4, 2026",
       "url": "https://www.phila.gov/media/20260602073537/PCPC-Agenda-June-4-2026.pdf",
-      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/media/20260602073537/PCPC-Agenda-June-4-2026.pdf"
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/media/20260602073537/PCPC-Agenda-June-4-2026.pdf"
     },
     "pcpc_sep": {
       "title": "City Planning Commission agenda, September 17, 2026",
       "url": "https://www.phila.gov/media/20260911120306/PCPC-Agenda-September-172026.pdf",
-      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/media/20260911120306/PCPC-Agenda-September-172026.pdf"
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/media/20260911120306/PCPC-Agenda-September-172026.pdf"
     },
     "pcpc_rec": {
       "title": "City Planning Commission: Recordings of public meetings",
       "url": "https://www.phila.gov/departments/philadelphia-city-planning-commission/recordings-of-public-meetings/",
-      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/departments/philadelphia-city-planning-commission/recordings-of-public-meetings/"
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/departments/philadelphia-city-planning-commission/recordings-of-public-meetings/"
     },
     "zba": {
       "title": "Participate in a Zoning Board of Adjustment hearing",
       "url": "https://phila.gov/services/zoning-planning-development/participate-in-a-zoning-board-of-adjustment-hearing/",
-      "archive": "https://web.archive.org/web/20261101/https://phila.gov/services/zoning-planning-development/participate-in-a-zoning-board-of-adjustment-hearing/"
+      "archive": "https://web.archive.org/web/20261125/https://phila.gov/services/zoning-planning-development/participate-in-a-zoning-board-of-adjustment-hearing/"
     },
     "ethics": {
       "title": "Board of Ethics: Public meetings",
       "url": "https://www.phila.gov/departments/board-of-ethics/about/public-meetings/",
-      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/departments/board-of-ethics/about/public-meetings/"
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/departments/board-of-ethics/about/public-meetings/"
     },
     "vote": {
       "title": "City Commissioners: Commissioner meetings",
       "url": "https://vote.phila.gov/resources-data/commissioner-meetings/commissioner-meetings",
-      "archive": "https://web.archive.org/web/20261101/https://vote.phila.gov/resources-data/commissioner-meetings/commissioner-meetings"
+      "archive": "https://web.archive.org/web/20261125/https://vote.phila.gov/resources-data/commissioner-meetings/commissioner-meetings"
+    },
+    "vote_nov17": {
+      "title": "City Commissioners agenda, November 17, 2026",
+      "url": "https://vote.phila.gov/media/Agenda_for_11_17_26.pdf",
+      "archive": "https://web.archive.org/web/20261125/https://vote.phila.gov/media/Agenda_for_11_17_26.pdf"
     },
     "hc": {
       "title": "Historical Commission meeting FAQ, October 9, 2026",
       "url": "https://www.phila.gov/media/20261001101845/HC-770-Oct-2026-FAQ.pdf",
-      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/media/20261001101845/HC-770-Oct-2026-FAQ.pdf"
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/media/20261001101845/HC-770-Oct-2026-FAQ.pdf"
     },
     "art": {
       "title": "Art Commission agenda, June 10, 2026",
       "url": "https://www.phila.gov/media/20260605102639/2026.06.10_Art-Commission-agenda.pdf",
-      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/media/20260605102639/2026.06.10_Art-Commission-agenda.pdf"
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/media/20260605102639/2026.06.10_Art-Commission-agenda.pdf"
     },
     "csc": {
       "title": "Civil Service Commission",
       "url": "https://www.phila.gov/departments/civil-service-commission/",
-      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/departments/civil-service-commission/"
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/departments/civil-service-commission/"
+    },
+    "csc_agendas": {
+      "title": "Civil Service Commission meeting agendas",
+      "url": "https://www.phila.gov/departments/civil-service-commission/civil-service-commission-meeting-agendas/",
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/departments/civil-service-commission/civil-service-commission-meeting-agendas/"
     },
     "lir": {
       "title": "Board of License and Inspection Review",
       "url": "https://phila.gov/departments/board-of-license-and-inspection-review",
-      "archive": "https://web.archive.org/web/20261101/https://phila.gov/departments/board-of-license-and-inspection-review"
+      "archive": "https://web.archive.org/web/20261125/https://phila.gov/departments/board-of-license-and-inspection-review"
     },
     "mcpd": {
       "title": "Office for People with Disabilities: The Commission",
       "url": "https://www.phila.gov/departments/office-for-people-with-disabilities/commission/",
-      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/departments/office-for-people-with-disabilities/commission/"
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/departments/office-for-people-with-disabilities/commission/"
     },
     "opd": {
       "title": "Office for People with Disabilities",
       "url": "https://www.phila.gov/departments/office-for-people-with-disabilities/",
-      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/departments/office-for-people-with-disabilities/"
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/departments/office-for-people-with-disabilities/"
     },
     "rm": {
-      "title": "City of Philadelphia: Submit a reasonable modification request (Spanish-language page)",
-      "url": "https://www.phila.gov/es/services/diversity-inclusion-accessibility-immigration/accessibility-services/submit-a-reasonable-modification-request/",
-      "archive": "https://web.archive.org/web/20261101/https://www.phila.gov/es/services/diversity-inclusion-accessibility-immigration/accessibility-services/submit-a-reasonable-modification-request/"
+      "title": "City of Philadelphia: Submit a reasonable modification request",
+      "url": "https://www.phila.gov/services/diversity-inclusion-accessibility-immigration/accessibility-services/submit-a-reasonable-modification-request/",
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/services/diversity-inclusion-accessibility-immigration/accessibility-services/submit-a-reasonable-modification-request/"
+    },
+    "grievance": {
+      "title": "City of Philadelphia: Submit an ADA grievance against the City",
+      "url": "https://www.phila.gov/services/diversity-inclusion-accessibility-immigration/accessibility-services/submit-an-ada-grievance-against-the-city/",
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/services/diversity-inclusion-accessibility-immigration/accessibility-services/submit-an-ada-grievance-against-the-city/"
+    },
+    "grievance_policy": {
+      "title": "City of Philadelphia: ADA Grievance and Appeal Policy (2019)",
+      "url": "https://www.phila.gov/media/20190401102416/ADA_Grievance_and_Appeal_Policy.pdf",
+      "archive": "https://web.archive.org/web/20261125/https://www.phila.gov/media/20190401102416/ADA_Grievance_and_Appeal_Policy.pdf"
     },
     "sunshine": {
       "title": "Pennsylvania Municipal League: New public meeting requirements under the Sunshine Law (Act 65 of 2021)",
       "url": "https://www.pml.org/wp-content/uploads/2021/07/New-Public-Meeting-Requirements-Under-the-Sunshine-Law.pdf",
-      "archive": "https://web.archive.org/web/20261101/https://www.pml.org/wp-content/uploads/2021/07/New-Public-Meeting-Requirements-Under-the-Sunshine-Law.pdf"
+      "archive": "https://web.archive.org/web/20261125/https://www.pml.org/wp-content/uploads/2021/07/New-Public-Meeting-Requirements-Under-the-Sunshine-Law.pdf"
     },
     "titleii": {
       "title": "U.S. Department of Justice: ADA Title II web and mobile app accessibility rule",
       "url": "https://www.ada.gov/title-ii-web-rule/",
-      "archive": "https://web.archive.org/web/20261101/https://www.ada.gov/title-ii-web-rule/"
+      "archive": "https://web.archive.org/web/20261125/https://www.ada.gov/title-ii-web-rule/"
     },
     "sb1150": {
       "title": "Spotlight PA: Pennsylvania Sunshine Act loophole closed (October 21, 2026)",
       "url": "https://www.spotlightpa.org/news/2026/10/pennsylvania-sunshine-act-loophole-closed-capitol/",
-      "archive": "https://web.archive.org/web/20261101/https://www.spotlightpa.org/news/2026/10/pennsylvania-sunshine-act-loophole-closed-capitol/"
+      "archive": "https://web.archive.org/web/20261125/https://www.spotlightpa.org/news/2026/10/pennsylvania-sunshine-act-loophole-closed-capitol/"
     }
   },
   "bodies": [
@@ -169,7 +194,7 @@
           "sources": [
             "mcpd"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "remote": {
           "status": "notfound",
@@ -177,7 +202,7 @@
           "sources": [
             "mcpd"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "written": {
           "status": "notfound",
@@ -185,7 +210,7 @@
           "sources": [
             "mcpd"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "captions": {
           "status": "notfound",
@@ -193,7 +218,7 @@
           "sources": [
             "mcpd"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "asl": {
           "status": "notfound",
@@ -201,7 +226,7 @@
           "sources": [
             "mcpd"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "contact": {
           "status": "partial",
@@ -210,7 +235,7 @@
             "mcpd",
             "opd"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "venue": {
           "status": "notfound",
@@ -218,7 +243,7 @@
           "sources": [
             "mcpd"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "recording": {
           "status": "notfound",
@@ -226,7 +251,7 @@
           "sources": [
             "mcpd"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "materials": {
           "status": "notfound",
@@ -234,7 +259,7 @@
           "sources": [
             "mcpd"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         }
       }
     },
@@ -245,11 +270,11 @@
       "findings": {
         "agenda": {
           "status": "notyet",
-          "finding": "Agendas are published in the Legislative Information Center; how far ahead was not verified.",
+          "finding": "Agendas are published in the Legislative Information Center, which doesn't show when each was posted.",
           "sources": [
             "legistar"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "remote": {
           "status": "notfound",
@@ -257,7 +282,7 @@
           "sources": [
             "council_pc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "written": {
           "status": "met",
@@ -265,7 +290,7 @@
           "sources": [
             "council_pc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "captions": {
           "status": "notfound",
@@ -274,7 +299,7 @@
             "council_pc",
             "phlgovtv"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "asl": {
           "status": "met",
@@ -282,7 +307,7 @@
           "sources": [
             "council_lap"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "contact": {
           "status": "met",
@@ -291,7 +316,7 @@
             "council_pc",
             "council_lap"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "venue": {
           "status": "notfound",
@@ -299,24 +324,25 @@
           "sources": [
             "council_pc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "recording": {
           "status": "partial",
-          "finding": "Sessions air live on PHLgovTV, and transcripts are available through the Legislative Information Center. An on-demand video archive is not described.",
+          "finding": "The agenda says sessions can be watched on Xfinity Channel 64, Fios Channel 40, and online. An on-demand archive of past sessions is not described.",
           "sources": [
-            "phlgovtv",
-            "legistar"
+            "council_agenda",
+            "phlgovtv"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "materials": {
           "status": "met",
-          "finding": "Agendas and minutes are published as web pages in the Legislative Information Center.",
+          "finding": "Each agenda is published as a PDF and as an “Accessible Agenda” web page in the Legislative Information Center.",
           "sources": [
-            "legistar"
+            "legistar",
+            "council_agenda"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         }
       }
     },
@@ -331,7 +357,7 @@
           "sources": [
             "boe"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "remote": {
           "status": "met",
@@ -339,7 +365,7 @@
           "sources": [
             "boe"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "written": {
           "status": "met",
@@ -347,7 +373,7 @@
           "sources": [
             "boe"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "captions": {
           "status": "notfound",
@@ -355,7 +381,7 @@
           "sources": [
             "boe"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "asl": {
           "status": "notfound",
@@ -363,7 +389,7 @@
           "sources": [
             "boe"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "contact": {
           "status": "partial",
@@ -371,7 +397,7 @@
           "sources": [
             "boe"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "venue": {
           "status": "notfound",
@@ -379,7 +405,7 @@
           "sources": [
             "boe"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "recording": {
           "status": "met",
@@ -387,15 +413,15 @@
           "sources": [
             "boe"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "materials": {
           "status": "notyet",
-          "finding": "Agenda format not yet checked.",
+          "finding": "Agendas are on the District's PrimeGov portal, which couldn't be opened for this review.",
           "sources": [
             "boe"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         }
       }
     },
@@ -411,7 +437,7 @@
             "pcpc_jun",
             "pcpc_sep"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "remote": {
           "status": "met",
@@ -419,7 +445,7 @@
           "sources": [
             "pcpc_jun"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "written": {
           "status": "met",
@@ -427,7 +453,7 @@
           "sources": [
             "pcpc_jun"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "captions": {
           "status": "notfound",
@@ -435,7 +461,7 @@
           "sources": [
             "pcpc_jun"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "asl": {
           "status": "notfound",
@@ -443,7 +469,7 @@
           "sources": [
             "pcpc_jun"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "contact": {
           "status": "notfound",
@@ -451,7 +477,7 @@
           "sources": [
             "pcpc_jun"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "venue": {
           "status": "notfound",
@@ -459,7 +485,7 @@
           "sources": [
             "pcpc_jun"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "recording": {
           "status": "met",
@@ -468,7 +494,7 @@
             "pcpc_jun",
             "pcpc_rec"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "materials": {
           "status": "met",
@@ -476,7 +502,7 @@
           "sources": [
             "pcpc_jun"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         }
       }
     },
@@ -487,11 +513,11 @@
       "findings": {
         "agenda": {
           "status": "notyet",
-          "finding": "Cases are listed on the ZBA calendar; how far ahead is not stated.",
+          "finding": "Cases are listed on the ZBA appeals calendar, an interactive page that couldn't be read for this review. How far ahead is not stated.",
           "sources": [
             "zba"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "remote": {
           "status": "met",
@@ -499,7 +525,7 @@
           "sources": [
             "zba"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "written": {
           "status": "met",
@@ -507,7 +533,7 @@
           "sources": [
             "zba"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "captions": {
           "status": "notfound",
@@ -515,7 +541,7 @@
           "sources": [
             "zba"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "asl": {
           "status": "notfound",
@@ -523,7 +549,7 @@
           "sources": [
             "zba"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "contact": {
           "status": "notfound",
@@ -531,7 +557,7 @@
           "sources": [
             "zba"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "venue": {
           "status": "notfound",
@@ -539,7 +565,7 @@
           "sources": [
             "zba"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "recording": {
           "status": "partial",
@@ -547,15 +573,15 @@
           "sources": [
             "zba"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "materials": {
           "status": "notyet",
-          "finding": "Calendar format not yet checked.",
+          "finding": "The appeals calendar is an interactive page that couldn't be read for this review.",
           "sources": [
             "zba"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         }
       }
     },
@@ -566,11 +592,11 @@
       "findings": {
         "agenda": {
           "status": "notyet",
-          "finding": "Agendas for upcoming meetings are posted; how far ahead is not stated.",
+          "finding": "The meetings page says agendas for upcoming meetings are posted there, but none was linked when checked, between meetings. How far ahead is not stated.",
           "sources": [
             "ethics"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "remote": {
           "status": "notfound",
@@ -578,7 +604,7 @@
           "sources": [
             "ethics"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "written": {
           "status": "notfound",
@@ -586,7 +612,7 @@
           "sources": [
             "ethics"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "captions": {
           "status": "notfound",
@@ -594,7 +620,7 @@
           "sources": [
             "ethics"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "asl": {
           "status": "notfound",
@@ -602,7 +628,7 @@
           "sources": [
             "ethics"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "contact": {
           "status": "notfound",
@@ -610,7 +636,7 @@
           "sources": [
             "ethics"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "venue": {
           "status": "notfound",
@@ -618,7 +644,7 @@
           "sources": [
             "ethics"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "recording": {
           "status": "met",
@@ -626,15 +652,15 @@
           "sources": [
             "ethics"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "materials": {
           "status": "notyet",
-          "finding": "Agenda format not yet checked.",
+          "finding": "No agenda was linked to check when the page was reviewed.",
           "sources": [
             "ethics"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         }
       }
     },
@@ -645,11 +671,11 @@
       "findings": {
         "agenda": {
           "status": "notyet",
-          "finding": "Agendas, including amended agendas, are listed by meeting date; how far ahead is not stated.",
+          "finding": "Agendas, including amended agendas, are listed by meeting date, but their web addresses don't record when they were posted.",
           "sources": [
             "vote"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "remote": {
           "status": "partial",
@@ -657,15 +683,15 @@
           "sources": [
             "vote"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "written": {
           "status": "met",
-          "finding": "Email phillyelection@phila.gov with “Public Comment” in the subject by 9:45 a.m. on meeting day.",
+          "finding": "Email phillyelection@phila.gov with “Public Comment” in the subject. The page gives the deadline as “4:45 A.M” on meeting day.",
           "sources": [
             "vote"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "captions": {
           "status": "notfound",
@@ -673,7 +699,7 @@
           "sources": [
             "vote"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "asl": {
           "status": "notfound",
@@ -681,7 +707,7 @@
           "sources": [
             "vote"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "contact": {
           "status": "notfound",
@@ -689,7 +715,7 @@
           "sources": [
             "vote"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "venue": {
           "status": "notfound",
@@ -697,7 +723,7 @@
           "sources": [
             "vote"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "recording": {
           "status": "partial",
@@ -705,15 +731,15 @@
           "sources": [
             "vote"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "materials": {
-          "status": "notyet",
-          "finding": "Agenda format not yet checked.",
+          "status": "met",
+          "finding": "The November 17, 2026 agenda is a text-based PDF.",
           "sources": [
-            "vote"
+            "vote_nov17"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         }
       }
     },
@@ -728,7 +754,7 @@
           "sources": [
             "hc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "remote": {
           "status": "met",
@@ -736,7 +762,7 @@
           "sources": [
             "hc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "written": {
           "status": "met",
@@ -744,7 +770,7 @@
           "sources": [
             "hc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "captions": {
           "status": "notfound",
@@ -752,7 +778,7 @@
           "sources": [
             "hc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "asl": {
           "status": "notfound",
@@ -760,7 +786,7 @@
           "sources": [
             "hc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "contact": {
           "status": "notfound",
@@ -768,7 +794,7 @@
           "sources": [
             "hc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "venue": {
           "status": "partial",
@@ -776,7 +802,7 @@
           "sources": [
             "hc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "recording": {
           "status": "met",
@@ -784,7 +810,7 @@
           "sources": [
             "hc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "materials": {
           "status": "met",
@@ -792,7 +818,7 @@
           "sources": [
             "hc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         }
       }
     },
@@ -807,7 +833,7 @@
           "sources": [
             "art"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "remote": {
           "status": "met",
@@ -815,7 +841,7 @@
           "sources": [
             "art"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "written": {
           "status": "met",
@@ -823,7 +849,7 @@
           "sources": [
             "art"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "captions": {
           "status": "notfound",
@@ -831,7 +857,7 @@
           "sources": [
             "art"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "asl": {
           "status": "notfound",
@@ -839,7 +865,7 @@
           "sources": [
             "art"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "contact": {
           "status": "notfound",
@@ -847,7 +873,7 @@
           "sources": [
             "art"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "venue": {
           "status": "notfound",
@@ -855,7 +881,7 @@
           "sources": [
             "art"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "recording": {
           "status": "met",
@@ -863,7 +889,7 @@
           "sources": [
             "art"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "materials": {
           "status": "met",
@@ -871,7 +897,7 @@
           "sources": [
             "art"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         }
       }
     },
@@ -882,11 +908,12 @@
       "findings": {
         "agenda": {
           "status": "notyet",
-          "finding": "Monthly meeting agendas are linked; how far ahead is not stated.",
+          "finding": "Monthly meeting agendas are linked, but the agendas page couldn't be read for this review. How far ahead is not stated.",
           "sources": [
-            "csc"
+            "csc",
+            "csc_agendas"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "remote": {
           "status": "notfound",
@@ -894,7 +921,7 @@
           "sources": [
             "csc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "written": {
           "status": "notfound",
@@ -902,7 +929,7 @@
           "sources": [
             "csc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "captions": {
           "status": "notfound",
@@ -910,7 +937,7 @@
           "sources": [
             "csc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "asl": {
           "status": "notfound",
@@ -918,7 +945,7 @@
           "sources": [
             "csc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "contact": {
           "status": "notfound",
@@ -926,7 +953,7 @@
           "sources": [
             "csc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "venue": {
           "status": "notfound",
@@ -934,7 +961,7 @@
           "sources": [
             "csc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "recording": {
           "status": "notfound",
@@ -942,15 +969,15 @@
           "sources": [
             "csc"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "materials": {
           "status": "notyet",
-          "finding": "Agenda format not yet checked.",
+          "finding": "The agendas page couldn't be read for this review.",
           "sources": [
-            "csc"
+            "csc_agendas"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         }
       }
     },
@@ -961,11 +988,11 @@
       "findings": {
         "agenda": {
           "status": "notyet",
-          "finding": "Scheduled appeals are on the L&I Appeals Calendar; how far ahead is not stated.",
+          "finding": "Scheduled appeals are on the L&I Appeals Calendar, an interactive page that couldn't be read for this review. How far ahead is not stated.",
           "sources": [
             "lir"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "remote": {
           "status": "partial",
@@ -973,7 +1000,7 @@
           "sources": [
             "lir"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "written": {
           "status": "notfound",
@@ -981,7 +1008,7 @@
           "sources": [
             "lir"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "captions": {
           "status": "notfound",
@@ -989,7 +1016,7 @@
           "sources": [
             "lir"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "asl": {
           "status": "notfound",
@@ -997,7 +1024,7 @@
           "sources": [
             "lir"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "contact": {
           "status": "notfound",
@@ -1005,7 +1032,7 @@
           "sources": [
             "lir"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "venue": {
           "status": "notfound",
@@ -1013,7 +1040,7 @@
           "sources": [
             "lir"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "recording": {
           "status": "met",
@@ -1021,15 +1048,15 @@
           "sources": [
             "lir"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         },
         "materials": {
           "status": "notyet",
-          "finding": "Calendar format not yet checked.",
+          "finding": "The appeals calendar is an interactive page that couldn't be read for this review.",
           "sources": [
             "lir"
           ],
-          "checked": "2026-11-01"
+          "checked": "2026-11-25"
         }
       }
     }
