@@ -64,7 +64,7 @@ const BODIES = [
      contact:{s:"partial",t:"The Office for People with Disabilities lists ADA.Request@phila.gov and a Commission contact, but no meeting-specific accommodation instructions or deadline.",src:["mcpd","opd"]},
      venue:NF(["mcpd"]), recording:NF(["mcpd"]), materials:NF(["mcpd"],"No agendas are published to check.")}},
  {id:"council", name:"City Council", about:"Philadelphia's legislature. Stated meetings take public comment on bills and resolutions on the agenda.",
-  p:{agenda:NY(["legistar"],"Agendas are published in the Legislative Information Center, which doesn't show when each was posted."),
+  p:{agenda:{s:"partial",t:"On November 25, 2026, the Legislative Information Center already had agendas posted for committee hearings on November 30. Advance posting of a Stated Meeting agenda was not yet observed.",src:["legistar"]},
      remote:NF(["council_pc"],"The public comment page describes in-person and advance sign-up only. A remote-meeting notice appears only in the page's older metadata."),
      written:{s:"met",t:"Comments emailed by 3 p.m. the day before become part of the record, though they are not read aloud.",src:["council_pc"]},
      captions:NF(["council_pc","phlgovtv"],"No live captioning of sessions is described."),

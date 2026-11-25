@@ -289,8 +289,8 @@
       "about": "Philadelphia's legislature. Stated meetings take public comment on bills and resolutions on the agenda.",
       "findings": {
         "agenda": {
-          "status": "notyet",
-          "finding": "Agendas are published in the Legislative Information Center, which doesn't show when each was posted.",
+          "status": "partial",
+          "finding": "On November 25, 2026, the Legislative Information Center already had agendas posted for committee hearings on November 30. Advance posting of a Stated Meeting agenda was not yet observed.",
           "sources": [
             "legistar"
           ],
