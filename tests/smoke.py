@@ -55,6 +55,19 @@ with sync_playwright() as p:
         over = page.evaluate("document.documentElement.scrollWidth - window.innerWidth")
         expect(over <= 1, f"{width}px: page scrolls sideways by {over}px")
 
+        # Drawings stay out of the accessibility tree; the text says the same thing.
+        visible_art = page.evaluate("[...document.querySelectorAll('.house,.doorway')].filter(e => e.getAttribute('aria-hidden') !== 'true').length")
+        expect(visible_art == 0, f"{width}px: {visible_art} door drawings are not aria-hidden")
+
+        # A shared link to one body opens its findings and lands on its card.
+        page.goto(URL + "#body-council", wait_until="load")
+        page.wait_for_timeout(300)
+        expect(page.evaluate("document.querySelector('#body-council details').open"), f"{width}px: #body-council should open that body's findings")
+        top = page.evaluate("document.getElementById('body-council').getBoundingClientRect().top")
+        expect(-5 <= top < 200, f"{width}px: #body-council should scroll to the card on load (top at {top:.0f}px)")
+        page.goto(URL, wait_until="load")
+        page.wait_for_timeout(200)
+
         if SHOTS:
             pathlib.Path(SHOTS).mkdir(parents=True, exist_ok=True)
             page.screenshot(path=f"{SHOTS}/open-door-{width}.png", full_page=True)
