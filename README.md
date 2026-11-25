@@ -43,12 +43,12 @@ City Council, Board of Education, City Planning Commission, Zoning Board of Adju
 
 - **Your rights at a public meeting:** the Sunshine Act's 24-hour agenda rule (including October 2026's SB 1150) and how to request an accommodation
 - **The Open Door standard:** a fill-in-the-blank access paragraph any board can paste onto its agendas
-- **A field checklist** for Philadelphia Documenters, journalists, and residents who attend meetings
+- **A field checklist** for local documenters, journalists, and residents who attend meetings
 - **Printable report cards** for each body, and the full dataset as CSV
 
 ## Disclosure
 
-Built by Nico Meyering, who chairs the Mayor's Commission on People with Disabilities. That Commission was scored first, with the same rules as everyone else. This is an independent project, not affiliated with or endorsed by the Committee of Seventy, the City of Philadelphia, or any body listed.
+Built by Nico Meyering, who chairs the Mayor's Commission on People with Disabilities. That Commission was scored first, with the same rules as everyone else. This is an independent project, not affiliated with or endorsed by the City of Philadelphia or any body listed.
 
 ## Corrections
 

@@ -599,7 +599,7 @@
         },
         "materials": {
           "status": "met",
-          "finding": "The November 18, 2026 agenda is a text-based PDF.",
+          "finding": "The November 18, 2026 agenda is a tagged, text-based PDF.",
           "sources": [
             "zba_nov18"
           ],
