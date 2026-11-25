@@ -929,10 +929,9 @@
       "about": "Hears appeals from City employees and oversees civil service rules.",
       "findings": {
         "agenda": {
-          "status": "notyet",
-          "finding": "Monthly meeting agendas are linked, but the agendas page couldn't be read for this review. How far ahead is not stated.",
+          "status": "notfound",
+          "finding": "The most recent agenda on the Commission's agendas page is for June 2023, dated July 12, 2023. None has been posted since.",
           "sources": [
-            "csc",
             "csc_agendas"
           ],
           "checked": "2026-11-25"
@@ -994,8 +993,8 @@
           "checked": "2026-11-25"
         },
         "materials": {
-          "status": "notyet",
-          "finding": "The agendas page couldn't be read for this review.",
+          "status": "notfound",
+          "finding": "No agenda since June 2023 is published to check.",
           "sources": [
             "csc_agendas"
           ],
