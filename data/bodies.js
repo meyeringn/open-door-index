@@ -96,7 +96,7 @@ const BODIES = [
      written:{s:"met",t:"Mail or email comments to RCOZBA@phila.gov with the case number.",src:["zba"]},
      captions:NF(["zba"]), asl:NF(["zba"]), contact:NF(["zba"]), venue:NF(["zba"]),
      recording:{s:"met",t:"Hearings are recorded, and recordings are posted on the Board's public meetings page as a courtesy.",src:["zba","zba_meetings"]},
-     materials:{s:"met",t:"The November 18, 2026 agenda is a text-based PDF.",src:["zba_nov18"]}}},
+     materials:{s:"met",t:"The November 18, 2026 agenda is a tagged, text-based PDF.",src:["zba_nov18"]}}},
  {id:"ethics", name:"Board of Ethics", about:"Administers and enforces the City's ethics, campaign finance, and lobbying rules. Meets monthly.",
   p:{agenda:NY(["ethics"],"The meetings page says agendas for upcoming meetings are posted there, but none was linked when checked, between meetings. How far ahead is not stated."),
      remote:NF(["ethics"],"The page doesn't say how to join or speak remotely."), written:NF(["ethics"],"Public comment isn't mentioned."),
