@@ -693,7 +693,7 @@
       "findings": {
         "agenda": {
           "status": "notyet",
-          "finding": "Agendas, including amended agendas, are listed by meeting date, but their web addresses don't record when they were posted.",
+          "finding": "Agendas, including amended agendas, are listed by meeting date, but their web addresses don't record when they were posted. The November 23, 2026 agenda file was created about 27 hours before the meeting.",
           "sources": [
             "vote"
           ],
@@ -709,7 +709,7 @@
         },
         "written": {
           "status": "met",
-          "finding": "Email phillyelection@phila.gov with “Public Comment” in the subject. The page gives the deadline as “4:45 A.M” on meeting day.",
+          "finding": "Email phillyelection@phila.gov with “Public Comment” in the subject by 9:45 a.m. on meeting day.",
           "sources": [
             "vote"
           ],
