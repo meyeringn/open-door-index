@@ -80,6 +80,11 @@
       "url": "https://www.philasd.org/schoolboard/meetings/",
       "archive": "https://web.archive.org/web/20261125/https://www.philasd.org/schoolboard/meetings/"
     },
+    "boe_nov12": {
+      "title": "Board of Education Policy Committee agenda packet, November 12, 2026 (PrimeGov)",
+      "url": "https://philasd.primegov.com/Public/CompiledDocument?meetingTemplateId=1663&compileOutputType=1",
+      "archive": "https://web.archive.org/web/20261125/https://philasd.primegov.com/Public/CompiledDocument?meetingTemplateId=1663&compileOutputType=1"
+    },
     "pcpc_jun": {
       "title": "City Planning Commission agenda, June 4, 2026",
       "url": "https://www.phila.gov/media/20260602073537/PCPC-Agenda-June-4-2026.pdf",
@@ -149,6 +154,11 @@
       "title": "Board of License and Inspection Review",
       "url": "https://phila.gov/departments/board-of-license-and-inspection-review",
       "archive": "https://web.archive.org/web/20261125/https://phila.gov/departments/board-of-license-and-inspection-review"
+    },
+    "li_appeals": {
+      "title": "L&I Appeals Calendar",
+      "url": "https://li.phila.gov/appeals-calendar",
+      "archive": "https://web.archive.org/web/20261125/https://li.phila.gov/appeals-calendar"
     },
     "mcpd": {
       "title": "Office for People with Disabilities: The Commission",
@@ -426,10 +436,10 @@
           "checked": "2026-11-25"
         },
         "materials": {
-          "status": "notyet",
-          "finding": "Agendas are on the District's PrimeGov portal, which couldn't be opened for this review.",
+          "status": "met",
+          "finding": "The November 12, 2026 Policy Committee agenda packet on the District's PrimeGov portal is a tagged, text-based PDF.",
           "sources": [
-            "boe"
+            "boe_nov12"
           ],
           "checked": "2026-11-25"
         }
@@ -999,10 +1009,10 @@
       "about": "Hears appeals of permits, violations, and notices from Licenses & Inspections.",
       "findings": {
         "agenda": {
-          "status": "notyet",
-          "finding": "Scheduled appeals are on the L&I Appeals Calendar, an interactive page that couldn't be read for this review. How far ahead is not stated.",
+          "status": "met",
+          "finding": "On November 25, 2026, the L&I Appeals Calendar already listed the L&I Review Board cases for the December 1 hearing.",
           "sources": [
-            "lir"
+            "li_appeals"
           ],
           "checked": "2026-11-25"
         },
@@ -1063,10 +1073,10 @@
           "checked": "2026-11-25"
         },
         "materials": {
-          "status": "notyet",
-          "finding": "The appeals calendar is an interactive page that couldn't be read for this review.",
+          "status": "met",
+          "finding": "The appeals calendar lists each hearing's cases as text in a web page table.",
           "sources": [
-            "lir"
+            "li_appeals"
           ],
           "checked": "2026-11-25"
         }

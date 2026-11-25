@@ -28,6 +28,7 @@ const SOURCES = {
   legistar:["City Council: Legislative Information Center calendar","https://phila.legistar.com/Calendar.aspx"],
   council_agenda:["City Council agenda, November 19, 2026 (accessible web version)","https://phila.legistar.com/View.ashx?M=AADA&ID=1457594&GUID=7B28EACC-F1C2-409F-82DD-8CEB26FD22F3"],
   boe:["Board of Education: Meetings","https://www.philasd.org/schoolboard/meetings/"],
+  boe_nov12:["Board of Education Policy Committee agenda packet, November 12, 2026 (PrimeGov)","https://philasd.primegov.com/Public/CompiledDocument?meetingTemplateId=1663&compileOutputType=1"],
   pcpc_jun:["City Planning Commission agenda, June 4, 2026","https://www.phila.gov/media/20260602073537/PCPC-Agenda-June-4-2026.pdf"],
   pcpc_sep:["City Planning Commission agenda, September 17, 2026","https://www.phila.gov/media/20260911120306/PCPC-Agenda-September-172026.pdf"],
   pcpc_rec:["City Planning Commission: Recordings of public meetings","https://www.phila.gov/departments/philadelphia-city-planning-commission/recordings-of-public-meetings/"],
@@ -42,6 +43,7 @@ const SOURCES = {
   csc:["Civil Service Commission","https://www.phila.gov/departments/civil-service-commission/"],
   csc_agendas:["Civil Service Commission meeting agendas","https://www.phila.gov/departments/civil-service-commission/civil-service-commission-meeting-agendas/"],
   lir:["Board of License and Inspection Review","https://phila.gov/departments/board-of-license-and-inspection-review"],
+  li_appeals:["L&I Appeals Calendar","https://li.phila.gov/appeals-calendar"],
   mcpd:["Office for People with Disabilities: The Commission","https://www.phila.gov/departments/office-for-people-with-disabilities/commission/"],
   opd:["Office for People with Disabilities","https://www.phila.gov/departments/office-for-people-with-disabilities/"],
   rm:["City of Philadelphia: Submit a reasonable modification request","https://www.phila.gov/services/diversity-inclusion-accessibility-immigration/accessibility-services/submit-a-reasonable-modification-request/"],
@@ -80,7 +82,7 @@ const BODIES = [
      contact:{s:"partial",t:"The page links to an accommodations section on the District's contact page; no meeting-specific contact or deadline.",src:["boe"]},
      venue:NF(["boe"],"The address, 440 N. Broad Street, is given without access details."),
      recording:{s:"met",t:"Meetings are livestreamed, on cable, and archived back to 2015.",src:["boe"]},
-     materials:NY(["boe"],"Agendas are on the District's PrimeGov portal, which couldn't be opened for this review.")}},
+     materials:{s:"met",t:"The November 12, 2026 Policy Committee agenda packet on the District's PrimeGov portal is a tagged, text-based PDF.",src:["boe_nov12"]}}},
  {id:"pcpc", name:"City Planning Commission", about:"Reviews plans, zoning bills, and major development.",
   p:{agenda:{s:"met",t:"The June 4, 2026 agenda's web address records an upload on June 2; the September 17 agenda's records September 11.",src:["pcpc_jun","pcpc_sep"]},
      remote:{s:"met",t:"The public can join and speak by computer, tablet, smartphone, or telephone.",src:["pcpc_jun"]},
@@ -129,11 +131,11 @@ const BODIES = [
      written:NF(["csc"]), captions:NF(["csc"]), asl:NF(["csc"]), contact:NF(["csc"]), venue:NF(["csc"]), recording:NF(["csc"]),
      materials:NY(["csc_agendas"],"The agendas page couldn't be read for this review.")}},
  {id:"lir", name:"Board of License & Inspection Review", about:"Hears appeals of permits, violations, and notices from Licenses & Inspections.",
-  p:{agenda:NY(["lir"],"Scheduled appeals are on the L&I Appeals Calendar, an interactive page that couldn't be read for this review. How far ahead is not stated."),
+  p:{agenda:{s:"met",t:"On November 25, 2026, the L&I Appeals Calendar already listed the L&I Review Board cases for the December 1 hearing.",src:["li_appeals"]},
      remote:{s:"partial",t:"Meetings are held virtually and in person, by Zoom or phone, but a public comment process is not described.",src:["lir"]},
      written:NF(["lir"]), captions:NF(["lir"]), asl:NF(["lir"]), contact:NF(["lir"]), venue:NF(["lir"]),
      recording:{s:"met",t:"Past public meetings are on a YouTube playlist.",src:["lir"]},
-     materials:NY(["lir"],"The appeals calendar is an interactive page that couldn't be read for this review.")}}
+     materials:{s:"met",t:"The appeals calendar lists each hearing's cases as text in a web page table.",src:["li_appeals"]}}}
 ];
 window.ODI = { CHECKED_ISO, PRACTICES, LABEL, SOURCES, BODIES };
 })();
