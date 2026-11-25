@@ -13,7 +13,7 @@ Open Door Index aims to meet the **Web Content Accessibility Guidelines (WCAG) 2
 - **Automated:** scanned with axe-core against WCAG 2.1 A and AA rules before launch, with zero issues, and weekly from then on. [See the latest results](https://github.com/meyeringn/meyeringn.github.io/actions/workflows/accessibility-check.yml).
 - **On every change:** an offline browser test checks the page at 1280px and 390px wide: no sideways scrolling, a skip link first in the tab order, short status messages for sorting instead of re-reading the whole scorecard, and descriptive door links.
 - **Reduced motion:** the tool's single animation turns off when your device asks for reduced motion.
-- **Built in:** Public Sans typeface, a high-contrast palette, status shown by words and symbols, never color alone, and printable report cards.
+- **Built in:** Public Sans for all reading text (Libre Caslon only for large headlines and numbers), a high-contrast palette with every color pair checked by `npm test`, status shown by words and symbols, never color alone, and printable report cards.
 - **Manual review:** not yet completed. Planned: keyboard-only use, NVDA and VoiceOver screen readers, and 200% zoom on a phone-width screen.
 
 Automated tools catch only some barriers. Until the manual review is done, please treat this tool as tested by machine, not yet by people.
@@ -27,6 +27,8 @@ Automated tools catch only some barriers. Until the manual review is done, pleas
 | The tip form opens your own email app rather than sending directly. | People without a mail app set up | Email meyeringn@gmail.com directly, or open a GitHub issue. | By design: no data is collected by the site |
 
 ## Recently fixed
+
+- **November 2026 (redesign):** the keyboard focus ring in the navy top bar was blue on navy, about 2.6:1, below the 3:1 that WCAG 2.4.13 and 1.4.11 ask for. Every dark band now uses a gold ring (8:1 or better). Opening a shared link to one body (for example `#body-council`) now lands on that card with its findings open; before, the page stayed at the top. Door drawings keep their outlines in Windows High Contrast mode.
 
 - **November 2026:** on phone-width screens the page scrolled sideways (WCAG 1.4.10 Reflow). Sorting or filtering the scorecard made screen readers re-read every card; it now announces a one-line summary.
 

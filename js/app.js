@@ -17,16 +17,28 @@ const statusHTML = s => `<span class="status s-${s}"><span class="dot" aria-hidd
 const STOOP = `<svg viewBox="0 0 100 10" preserveAspectRatio="none" focusable="false"><rect x="1" y="1" width="98" height="8" rx="1" fill="#F7F5F0" stroke="#14324A" stroke-width="2" vector-effect="non-scaling-stroke"/><line x1="1" y1="4" x2="99" y2="4" stroke="#C9D1D9" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>`;
 const RAMP = `<svg viewBox="0 0 100 10" preserveAspectRatio="none" focusable="false"><polygon points="1,1 99,9 1,9" fill="#F7F5F0" stroke="#14324A" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></svg>`;
 
+// How far a door opens: a crack when nothing is documented, nearly wide open at nine of nine.
+const openness = b => 4 + (metCount(b) + partCount(b) * 0.5) / PRACTICES.length * 84;
+const hasRamp = b => b.p.venue.s === "met";
+// One rowhouse doorway: cornice, brick, door, stoop or ramp, sidewalk. Decoration only; the text says the same.
+// The hero doors swing open after load; a card's doorway is drawn already open (openNow).
+function house(b, cls = "house", openNow = false){
+  const ramp = hasRamp(b);
+  const style = openNow ? ` style="--open:${openness(b).toFixed(1)}"` : "";
+  return `<span class="${cls}" aria-hidden="true"><span class="cornice"></span><span class="entry">
+      <span class="frame"><span class="leaf"${style}></span></span>
+      <span class="${ramp ? "ramp" : "stoop"}">${ramp ? RAMP : STOOP}</span></span>
+      <span class="walk"></span></span>`;
+}
+
 function renderDoors(){
   const ul = $("#doors");
   ul.innerHTML = BODIES.map(b => {
-    const m = metCount(b), p = partCount(b);
-    const open = 4 + (m + p*0.5) / 9 * 84;
+    const m = metCount(b), open = openness(b);
     // Philadelphia rowhouse stoop: a marble step unless the body documents a step-free venue.
-    const ramp = b.p.venue.s === "met";
+    const ramp = hasRamp(b);
     return `<li><a class="door-btn" href="#body-${b.id}" data-open="${open.toFixed(1)}">
-      <span class="frame" aria-hidden="true"><span class="leaf"></span></span>
-      <span class="${ramp ? "ramp" : "stoop"}" aria-hidden="true">${ramp ? RAMP : STOOP}</span>
+      ${house(b)}
       <span class="door-name">${esc(b.name)}</span>
       <span class="door-count">${m} of 9<span class="sr-only"> practices met${ramp ? "" : "; step-free access not described"}</span></span></a></li>`;
   }).join("");
@@ -48,7 +60,7 @@ function renderFindings(){
   ].map(([num, txt]) => `<div class="finding"><strong>${num}</strong><p>${txt}</p></div>`).join("");
 }
 
-function sources(ids){ return ids.map(k => `<a href="${SOURCES[k][1]}" rel="noopener">${esc(SOURCES[k][0])}</a>`).join("; "); }
+function sources(ids){ return ids.map(k => `<a href="${esc(SOURCES[k][1])}" rel="noopener">${esc(SOURCES[k][0])}</a>`).join("; "); }
 
 const SORT_LABEL = {list:"in list order", most:"by most practices met", fewest:"by fewest practices met", az:"from A to Z"};
 
@@ -69,10 +81,11 @@ function renderBodies(announce){
     }).join("");
     const summary = only ? `Read the ${esc(pr[0].name.toLowerCase())} finding for ${esc(b.name)}` : `Read the nine findings for ${esc(b.name)}`;
     return `<article class="body" id="body-${b.id}" aria-labelledby="h-${b.id}">
-      <header><h3 id="h-${b.id}">${esc(b.name)}</h3>
-      <p class="score">${m} of 9 practices met${p?` <small>plus ${p} partial</small>`:""}</p></header>
+      <div class="card-top">${house(b, "doorway", true)}
+      <div class="card-head"><header><h3 id="h-${b.id}">${esc(b.name)}</h3>
+      <p class="score"><span class="n">${m}</span> of 9 practices met${p?` <small>plus ${p} partial</small>`:""}</p></header>
       <div class="meter" aria-hidden="true">${meter}</div>
-      <p class="about">${esc(b.about)}</p>
+      <p class="about">${esc(b.about)}</p></div></div>
       ${b.note?`<p class="note">${esc(b.note)}</p>`:""}
       <details class="findings-d"${b.id===BODIES[0].id || only ?" open":""}><summary>${summary}</summary>
       <table class="practices"><caption class="sr-only">${esc(b.name)}: access practices, status, and evidence. Checked ${CHECKED}.</caption>
@@ -95,7 +108,7 @@ function renderCompare(){
   $("#compareTable").innerHTML = `<caption class="sr-only">Every body and every practice. Checked ${CHECKED}.</caption>` + head + `<tbody>${body}</tbody>`;
 }
 
-function renderSources(){ $("#sourceList").innerHTML = Object.values(SOURCES).map(([t,u]) => `<li><a href="${u}" rel="noopener">${esc(t)}</a></li>`).join(""); }
+function renderSources(){ $("#sourceList").innerHTML = Object.values(SOURCES).map(([t,u]) => `<li><a href="${esc(u)}" rel="noopener">${esc(t)}</a></li>`).join(""); }
 
 function setupForms(){
   $("#filter").innerHTML += PRACTICES.map(p => `<option value="${p.id}">${p.name}</option>`).join("");
@@ -128,7 +141,16 @@ function setupForms(){
   });
 }
 
-function openFromHash(){ const m = location.hash.match(/^#body-([\w-]+)$/); if (m){ const d = document.querySelector(`#body-${m[1]} details`); if (d) d.open = true; } }
-window.addEventListener("hashchange", openFromHash);
+// Open a body's findings when its door (or a shared link like #body-council) is followed.
+function openFromHash(scroll){
+  const m = location.hash.match(/^#body-([\w-]+)$/);
+  if (!m) return;
+  const card = document.getElementById(`body-${m[1]}`);
+  if (!card) return;
+  card.querySelector("details").open = true;
+  // On first load the card didn't exist yet when the browser tried to jump to it, so jump now.
+  if (scroll) card.scrollIntoView();
+}
+window.addEventListener("hashchange", () => openFromHash(false));
 window.addEventListener("beforeprint", () => { if (!document.body.classList.contains("print-one")) document.querySelectorAll(".findings-d").forEach(d => d.open = true); });
-renderDoors(); renderFindings(); setupForms(); renderBodies(false); renderCompare(); renderSources(); openFromHash();
+renderDoors(); renderFindings(); setupForms(); renderBodies(false); renderCompare(); renderSources(); openFromHash(true);

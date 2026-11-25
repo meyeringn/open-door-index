@@ -86,6 +86,7 @@ check(new RegExp(`City Council and ${word(n - 1)} city boards`, 'i').test(html),
 check(html.includes(`${n - 1} city boards and commissions`), `Meta description should say "${n - 1} city boards and commissions"`);
 check(html.includes(`${cap(word(n))} Philadelphia public bodies`), `Share description should say "${cap(word(n))} Philadelphia public bodies"`);
 check(!/const (BODIES|SOURCES|PRACTICES)\s*=/.test(html + app), 'Findings data must live only in data/bodies.js');
+check(html.includes(`"dateModified":"${CHECKED_ISO}"`), `Dataset metadata (JSON-LD) should say "dateModified":"${CHECKED_ISO}"`);
 
 // ---------- 4. Language ----------
 const OFFICIAL = /(Mayor's )?(Commission|Office) (on|for) People with Disabilities/g;
@@ -110,6 +111,11 @@ const pairs = [
   ['#FFFFFF', 'door', 4.5, 'button text'], ['light', 'door', 4.5, 'brand and labels on navy'], ['light', 'ink', 4.5, 'footer links'],
   ['ink', 'light-2', 4.5, 'note text'], ['ink', 'light', 4.5, 'copy button text'], ['ink-soft', 'light-2', 4.5, 'secondary text on notes'],
   ['focus', 'wall', 3, 'focus ring'], ['focus', 'paper', 3, 'focus ring on cards'], ['door', 'wall', 3, 'door outline'], ['door', 'paper', 3, 'control borders'],
+  ['ink', 'paper', 4.5, 'card text'], ['ink-soft', 'stone', 4.5, 'text in the controls panel'], ['ink', 'stone', 4.5, 'labels in the controls panel'],
+  ['mist', 'door', 4.5, 'lede and key on the navy hero'], ['light-2', 'door', 4.5, 'notice line on the hero'], ['#FFFFFF', 'door', 4.5, 'door names and headline'],
+  ['#FFFFFF', 'ink', 4.5, 'top bar and footer text'], ['light', 'ink', 4.5, 'brand accent in the top bar'],
+  ['focus-dark', 'door', 3, 'focus ring on the hero and the standard'], ['focus-dark', 'ink', 3, 'focus ring in the top bar and footer'],
+  ['marble', 'brick', 3, 'door trim against the brick'], ['door', 'marble', 3, 'door leaf against its trim'],
 ];
 for (const [fg, bg, min, what] of pairs) {
   const r = ratio(T(fg), T(bg));

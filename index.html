@@ -12,23 +12,31 @@
 <meta property="og:image" content="https://meyeringn.github.io/open-door-index/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Share card for Open Door Index, reading: Can every Philadelphian get in the room?">
+<meta property="og:image:alt" content="Open Door Index: Can every Philadelphian get in the room? Eleven rowhouse doors, one per public body, each open as wide as its count of nine access practices met.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#14324A">
+<meta name="theme-color" content="#13202B">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Dataset","name":"Open Door Index","description":"Whether City Council and ten Philadelphia boards and commissions publish how Disabled residents can take part in their public meetings, checked against nine access practices. Every finding is sourced and dated.","url":"https://meyeringn.github.io/open-door-index/","license":"https://opensource.org/licenses/MIT","isAccessibleForFree":true,"creator":{"@type":"Person","name":"Nico Meyering","url":"https://github.com/meyeringn"},"spatialCoverage":"Philadelphia, Pennsylvania","keywords":["accessibility","public meetings","disability","Philadelphia","open government"],"distribution":[{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://meyeringn.github.io/open-door-index/data/open-door-index.csv"},{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://meyeringn.github.io/open-door-index/data/open-door-index.json"}]}
+{"@context":"https://schema.org","@type":"Dataset","name":"Open Door Index","description":"Whether City Council and ten Philadelphia boards and commissions publish how Disabled residents can take part in their public meetings, checked against nine access practices. Every finding is sourced and dated.","url":"https://meyeringn.github.io/open-door-index/","license":"https://opensource.org/licenses/MIT","isAccessibleForFree":true,"dateModified":"2026-11-01","creator":{"@type":"Person","name":"Nico Meyering","url":"https://github.com/meyeringn"},"spatialCoverage":"Philadelphia, Pennsylvania","keywords":["accessibility","public meetings","disability","Philadelphia","open government"],"distribution":[{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://meyeringn.github.io/open-door-index/data/open-door-index.csv"},{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://meyeringn.github.io/open-door-index/data/open-door-index.json"}]}
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='3' width='20' height='27' rx='2' fill='%2314324A'/%3E%3Crect x='9' y='6' width='9' height='22' fill='%23F6C453'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@700&family=Public+Sans:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://meyeringn.github.io/open-door-index/">
 <style>
 :root{
-  --wall:#EEF1F4; --paper:#FFFFFF; --ink:#13202B; --ink-soft:#3D4B57;
+  --wall:#F4EFE6; --paper:#FFFDF8; --ink:#13202B; --ink-soft:#3D4B57;
   --door:#14324A; --door-2:#1E4766; --brick:#7A2E2A; --light:#F6C453; --light-2:#FBE3A1;
   --met:#1F6E43; --partial:#7A5200; --notfound:#7A2E2A; --notyet:#4B5563;
-  --rule:#C9D1D9; --focus:#0B5FFF;
+  --rule:#CFC6B6; --focus:#0B5FFF; --focus-dark:#F6C453;
+  --marble:#F7F5F0; --mist:#D5DEE7; --walk:#C9C2B6; --stone:#EDE6D8;
   --measure:68ch;
+  --serif:"Libre Caslon Display","Big Caslon","Iowan Old Style",Georgia,serif;
+  --serif-text:"Libre Caslon Text","Iowan Old Style",Georgia,serif;
+  /* Running-bond brick and a poured sidewalk, drawn flat (no gradients). */
+  --bricks:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='18'%3E%3Crect width='44' height='18' fill='%235E231F'/%3E%3Crect x='0' y='0' width='20' height='8' fill='%237A2E2A'/%3E%3Crect x='22' y='0' width='20' height='8' fill='%23833331'/%3E%3Crect x='0' y='10' width='9' height='7' fill='%2374292A'/%3E%3Crect x='11' y='10' width='20' height='7' fill='%237A2E2A'/%3E%3Crect x='33' y='10' width='11' height='7' fill='%2374292A'/%3E%3C/svg%3E");
+  --dentils:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='14'%3E%3Crect width='12' height='6' fill='%2313202B'/%3E%3Crect x='2' y='6' width='7' height='6' fill='%2313202B'/%3E%3C/svg%3E");
+  --sidewalk:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='14'%3E%3Crect width='56' height='14' fill='%23C9C2B6'/%3E%3Crect width='56' height='3' fill='%238E877B'/%3E%3Crect x='54' y='3' width='2' height='11' fill='%23A9A194'/%3E%3C/svg%3E");
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -36,60 +44,88 @@ body{margin:0;background:var(--wall);color:var(--ink);font:400 1.0625rem/1.6 "Pu
 a{color:var(--door-2);text-underline-offset:3px}
 a:hover{color:var(--brick)}
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:2px}
-.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:10}
+/* Dark bands (top bar, the block, the standard, the footer) get a gold focus ring: blue is under 3:1 on navy. */
+.on-dark :focus-visible,.on-dark:focus-visible{outline-color:var(--focus-dark)}
+.skip{position:absolute;left:-999px;top:0;background:var(--light);color:var(--ink);padding:.6rem 1rem;z-index:10;font-weight:600}
 .skip:focus{left:1rem;top:1rem}
 .wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
 
 /* top bar */
-.topbar{background:var(--door);color:#fff}
-.topbar .wrap{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:center;justify-content:space-between;padding-top:.8rem;padding-bottom:.8rem}
-.brand{font-weight:800;letter-spacing:-.01em;font-size:1.05rem;color:#fff;text-decoration:none}
+.topbar{background:var(--ink);color:#fff;border-bottom:4px solid var(--light)}
+.topbar .wrap{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:center;justify-content:space-between;padding-top:.7rem;padding-bottom:.7rem}
+.brand{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--serif);font-size:1.45rem;line-height:1;color:#fff;text-decoration:none;letter-spacing:.005em}
+.brand svg{width:20px;height:28px;flex:none}
 .brand span{color:var(--light)}
+.brand:hover{color:#fff}
 .topbar nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.25rem 1.1rem}
-.topbar nav a{color:#fff;text-decoration:none;font-size:.95rem;display:inline-block;padding:.3rem 0}
-.topbar nav a:hover{text-decoration:underline;color:var(--light)}
+.topbar nav a{color:#fff;text-decoration:none;font-size:.95rem;display:inline-block;padding:.45rem 0;border-bottom:2px solid transparent}
+.topbar nav a:hover{color:var(--light);border-bottom-color:var(--light)}
 
-/* hero */
-.hero{padding:3.5rem 0 2.5rem}
-.hero h1{font-size:clamp(2.2rem,5.6vw,4.1rem);line-height:1.02;font-weight:800;letter-spacing:-.025em;margin:0 0 1rem;max-width:16ch}
-.hero .lede{font-size:1.2rem;max-width:58ch;color:var(--ink-soft);margin:0 0 2.2rem}
-.doors{display:grid;grid-template-columns:repeat(6,minmax(0,116px));justify-content:start;gap:1.4rem clamp(.6rem,2vw,1.4rem);align-items:start;margin:0;padding:1.2rem 0 0;list-style:none}
-@media (min-width:1240px){
-  /* One Philadelphia block: all eleven doors in a row, a little wider than the text column */
-  .doors{grid-template-columns:repeat(11,minmax(0,1fr));width:min(100vw - 4rem,1180px);position:relative;left:50%;translate:-50% 0;column-gap:1rem}
-}
-.doors li{display:flex}
-.door-btn{all:unset;position:relative;display:flex;flex-direction:column;width:100%;cursor:pointer;text-align:center;border-radius:4px;padding-bottom:.6rem}
-.door-btn:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
-.frame{display:block;width:100%;position:relative;aspect-ratio:9/19;background:linear-gradient(180deg,var(--light) 0%,var(--light-2) 100%);border:clamp(3px,.5vw,6px) solid var(--door);border-bottom-width:clamp(5px,.8vw,9px);border-radius:999px 999px 2px 2px;perspective:260px;overflow:hidden}
+/* hero: the block at dusk */
+.hero{background:var(--door);color:#fff;padding:3rem 0 0}
+.notice{display:flex;flex-wrap:wrap;gap:.2rem 1rem;align-items:baseline;margin:0 0 1.4rem;padding:.55rem 0;border-top:3px double var(--light);border-bottom:1px solid var(--light);color:var(--light-2);font-size:.92rem;letter-spacing:.02em;max-width:52rem}
+.notice strong{color:var(--light);font-weight:600}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,6.6vw,5.4rem);line-height:.98;letter-spacing:-.01em;margin:0 0 1.2rem;max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--light)}
+.hero .lede{font-size:1.2rem;max-width:56ch;color:var(--mist);margin:0 0 2.4rem}
+.hero .lede strong{color:#fff;font-weight:600}
+
+/* The block: eleven rowhouse doorways, side by side like a Philadelphia street */
+.block-wrap{padding:0 1.25rem}
+.doors{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));max-width:1180px;margin:0 auto;padding:0;list-style:none;row-gap:1.6rem;align-items:start}
+@media (min-width:1100px){.doors{grid-template-columns:repeat(11,minmax(0,1fr))}}
+@media (max-width:720px){.doors{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.doors li{display:flex;min-width:0}
+.door-btn{all:unset;box-sizing:border-box;position:relative;display:flex;flex-direction:column;width:100%;cursor:pointer;text-align:center}
+.door-btn:focus-visible{outline:3px solid var(--focus-dark);outline-offset:3px}
+.house{display:flex;flex-direction:column;background:var(--bricks);border-left:1px solid #4F1D1A}
+.doors li:first-child .house{border-left:0}
+.cornice{display:block;height:14px;margin-bottom:14px;background:var(--dentils) repeat-x}
+.entry{display:flex;flex-direction:column;align-items:center;padding:0 18%}
+.frame{display:block;width:100%;position:relative;aspect-ratio:9/19;background:linear-gradient(180deg,var(--light) 0%,var(--light-2) 100%);border:clamp(3px,.45vw,6px) solid var(--marble);border-bottom-width:clamp(4px,.6vw,7px);outline:2px solid var(--ink);outline-offset:0;border-radius:999px 999px 2px 2px;perspective:260px;overflow:hidden}
 .leaf{display:block;position:absolute;inset:0;background:linear-gradient(90deg,var(--door) 0%,var(--door-2) 100%);transform-origin:left center;transform:rotateY(calc(var(--open,0) * -1deg));border-radius:999px 999px 0 0;box-shadow:inset -3px 0 0 rgba(255,255,255,.12)}
-.leaf::after{content:"";position:absolute;right:16%;top:54%;width:10%;aspect-ratio:1;border-radius:50%;background:var(--light)}
-.door-btn:hover .frame,.door-btn:focus-visible .frame{border-color:var(--brick)}
-.door-name{display:block;margin-top:.5rem;hyphens:auto;font-size:.82rem;line-height:1.25;font-weight:600;color:var(--ink)}
-.door-count{display:block;font-size:.82rem;color:var(--ink-soft)}
+.leaf::before{content:"";position:absolute;left:14%;right:14%;top:12%;height:30%;border:2px solid rgba(255,255,255,.16);border-radius:999px 999px 2px 2px}
+.leaf::after{content:"";position:absolute;right:16%;top:56%;width:10%;aspect-ratio:1;border-radius:50%;background:var(--light)}
+.door-btn:hover .frame,.door-btn:focus-visible .frame{border-color:var(--light)}
 /* Philadelphia marble stoop under each door. It becomes a ramp only when a body documents a step-free venue. */
-.stoop,.ramp{display:block;width:112%;margin-left:-6%;height:clamp(9px,1.1vw,14px)}
-.ramp{width:140%;margin-left:0}
+.stoop,.ramp{display:block;width:124%;margin:0 -12%;height:clamp(9px,1.1vw,14px)}
+.ramp{width:150%;margin:0 -12% 0 -12%}
 .stoop svg,.ramp svg{display:block;width:100%;height:100%;overflow:visible}
-@media (prefers-reduced-motion:no-preference){
-  .doors.ready .leaf{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
-}
-.hero-key{margin:1.4rem 0 0;color:var(--ink-soft);font-size:.95rem;max-width:70ch}
+.walk{display:block;height:14px;background:var(--sidewalk) repeat-x}
+.door-name{display:block;margin:.6rem .3rem 0;hyphens:auto;font-size:.82rem;line-height:1.25;font-weight:600;color:#fff}
+.door-count{display:block;font-size:.82rem;color:var(--light);font-weight:600;margin:0 .3rem}
 @media (max-width:720px){
-  .doors{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:1.2rem}
   .door-name{font-size:.78rem;overflow-wrap:anywhere}
   .door-count{font-size:.78rem}
 }
+@media (prefers-reduced-motion:no-preference){
+  .doors.ready .leaf{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+}
+.hero-key{margin:0;padding:1.6rem 0 2.6rem;color:var(--mist);font-size:.95rem;max-width:70ch}
 
-/* sections */
-section.block{padding:3rem 0;border-top:1px solid var(--rule)}
-section.block h2{font-size:clamp(1.6rem,3.2vw,2.3rem);line-height:1.1;letter-spacing:-.02em;margin:0 0 .8rem;font-weight:800}
+/* sections: set like a posted broadside */
+section.block{padding:3.2rem 0}
+section.block h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.05;letter-spacing:-.005em;margin:0 0 .9rem;padding-top:.9rem;border-top:3px double var(--ink);max-width:var(--measure)}
 section.block>.wrap>p,.prose p{max-width:var(--measure)}
-.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-top:1.5rem}
-.finding{border-left:6px solid var(--light);padding:.2rem 0 .2rem 1rem}
-.finding strong{display:block;font-size:2.4rem;line-height:1;font-weight:800;color:var(--door)}
-.finding p{margin:.4rem 0 0}
+h3{font-family:var(--serif-text);font-weight:700;letter-spacing:-.005em}
+
+/* what we found */
+.findings{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:1.8rem;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.finding{padding:1.1rem 1.2rem 1.2rem;border-left:1px solid var(--rule)}
+.finding:first-child{border-left:0;padding-left:0}
+.finding strong{display:block;font-family:var(--serif);font-weight:400;font-size:4.2rem;line-height:.9;color:var(--door)}
+.finding p{margin:.5rem 0 0}
+@media (max-width:900px){
+  .findings{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .finding:nth-child(3){border-left:0;padding-left:0}
+  .finding:nth-child(n+3){border-top:1px solid var(--rule)}
+}
+@media (max-width:480px){
+  .findings{grid-template-columns:minmax(0,1fr)}
+  .finding{border-left:0;padding-left:0}
+  .finding+.finding{border-top:1px solid var(--rule)}
+}
 
 /* legend */
 .legend{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin:1rem 0 0;padding:0;list-style:none;font-size:.95rem}
@@ -101,29 +137,45 @@ section.block>.wrap>p,.prose p{max-width:var(--measure)}
 .s-notyet{color:var(--notyet)} .s-notyet .dot{background:#fff;border:2px dashed var(--notyet)}
 
 /* controls */
-.controls{display:flex;flex-wrap:wrap;gap:.8rem 1.4rem;align-items:end;margin:1.6rem 0 1rem}
+.controls{display:flex;flex-wrap:wrap;gap:.8rem 1.4rem;align-items:end;margin:1.6rem 0 1rem;padding:1rem 1.1rem;background:var(--stone);border-radius:4px}
 .controls label{display:block;font-weight:600;font-size:.9rem;margin-bottom:.25rem}
 .controls>div{min-width:0;max-width:100%}
 select,button{font:inherit}
-select{padding:.5rem .6rem;border:2px solid var(--door);border-radius:6px;background:#fff;color:var(--ink);max-width:100%}
-.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem 1rem;border:2px solid var(--door);background:var(--door);color:#fff;border-radius:6px;font-weight:600;cursor:pointer;text-decoration:none}
+select{padding:.5rem .6rem;border:2px solid var(--door);border-radius:4px;background:#fff;color:var(--ink);max-width:100%;min-height:44px}
+.btn{display:inline-flex;align-items:center;gap:.45rem;min-height:44px;padding:.55rem 1rem;border:2px solid var(--door);background:var(--door);color:#fff;border-radius:4px;font-weight:600;cursor:pointer;text-decoration:none}
 .btn:hover{background:var(--door-2);color:#fff}
-.btn.ghost{background:#fff;color:var(--door)}
+.btn.ghost{background:var(--paper);color:var(--door)}
 .btn.ghost:hover{background:var(--light-2);color:var(--ink)}
 
-/* body cards */
+/* body cards: each body gets its own doorway */
 .bodies{display:grid;grid-template-columns:minmax(0,1fr);gap:1.6rem}
-.body{background:var(--paper);border:1px solid var(--rule);border-top:8px solid var(--door);border-radius:4px 4px 6px 6px;padding:1.4rem 1.4rem 1.2rem;scroll-margin-top:1rem}
-.body header{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;align-items:baseline;justify-content:space-between}
-.body h3{margin:0;font-size:1.45rem;letter-spacing:-.01em;line-height:1.2}
-.score{font-weight:800;font-size:1.05rem;color:var(--door)}
+.body{background:var(--paper);border:1px solid var(--rule);border-top:2px solid var(--ink);border-radius:0 0 4px 4px;padding:0 1.4rem 1.2rem;scroll-margin-top:1rem}
+.card-top{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 1.4rem;align-items:stretch;margin:0 0 .6rem -1.4rem}
+.doorway{display:flex;flex-direction:column;width:104px;background:var(--bricks)}
+.doorway .cornice{margin-bottom:auto}
+.doorway .entry{padding:14px 0 0}
+.doorway .frame{width:56px}
+.doorway .stoop,.doorway .ramp{width:76px;margin:0}
+.card-head{padding-top:1.2rem;min-width:0}
+.body header{display:flex;flex-wrap:wrap;gap:.2rem 1.2rem;align-items:baseline;justify-content:space-between}
+.body h3{margin:0;font-size:1.5rem;line-height:1.2}
+.score{font-weight:600;font-size:1rem;color:var(--door);margin:0}
+.score .n{font-family:var(--serif);font-weight:400;font-size:2.3rem;line-height:1;margin-right:.15rem;vertical-align:-.12em}
 .score small{font-weight:400;color:var(--ink-soft);font-size:.9rem}
 .meter{display:flex;gap:3px;margin:.7rem 0 .2rem;max-width:420px}
-.meter span{flex:1;height:10px;border-radius:2px;background:#DDE3E9}
+.meter span{flex:1;height:10px;border-radius:1px;background:#E3DCCF}
 .meter span.m{background:var(--met)}
 .meter span.p{background:repeating-linear-gradient(135deg,var(--partial) 0 4px,#E9D9B6 4px 8px)}
-.body .about{margin:.6rem 0 1rem;color:var(--ink-soft);max-width:var(--measure)}
+.body .about{margin:.6rem 0 0;color:var(--ink-soft);max-width:var(--measure)}
 .body .note{background:var(--light-2);border-left:5px solid var(--light);padding:.7rem 1rem;margin:0 0 1rem;max-width:var(--measure)}
+@media (max-width:720px){
+  .body{padding:0 1rem 1rem}
+  .card-top{margin-left:-1rem;gap:0 1rem}
+  .doorway{width:76px}
+  .doorway .frame{width:40px}
+  .doorway .stoop,.doorway .ramp{width:54px}
+  .body h3{font-size:1.25rem}
+}
 table{border-collapse:collapse;width:100%}
 .practices th,.practices td{text-align:left;vertical-align:top;padding:.6rem .5rem;border-top:1px solid var(--rule)}
 .practices thead th{font-size:.85rem;color:var(--ink-soft);font-weight:600;border-top:0}
@@ -135,59 +187,81 @@ table{border-collapse:collapse;width:100%}
 .body .checked{font-size:.9rem;color:var(--ink-soft);margin:.6rem 0 0}
 .dated{font-size:.9rem;color:var(--ink-soft)}
 .sortmsg{margin:0 0 1rem;color:var(--ink-soft);font-size:.95rem}
-#tipText{width:100%;font:inherit;padding:.5rem;border:2px solid var(--door);border-radius:6px}
+#tipText{width:100%;font:inherit;padding:.5rem;border:2px solid var(--door);border-radius:4px;background:#fff}
 #tipHelp{color:var(--ink-soft);font-size:.95rem}
-.noscript{background:var(--light-2);border:2px solid var(--light);border-radius:6px;padding:1rem 1.2rem;max-width:var(--measure)}
-.findings-d summary{cursor:pointer;font-weight:600;color:var(--door-2);padding:.5rem 0;width:max-content;max-width:100%}
+.noscript{background:var(--light-2);border:2px solid var(--light);border-radius:4px;padding:1rem 1.2rem;max-width:var(--measure)}
+.findings-d summary{cursor:pointer;font-weight:600;color:var(--door-2);padding:.6rem 0;width:max-content;max-width:100%}
 .findings-d summary:hover{color:var(--brick)}
 .findings-d[open] summary{margin-bottom:.4rem}
 @media (max-width:720px){
   .practices thead{display:none}
-  .practices tr{display:grid;grid-template-columns:1fr;border-top:1px solid var(--rule);padding:.5rem 0}
+  .practices tr{display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--rule);padding:.5rem 0}
   .practices th,.practices td{border:0;padding:.15rem 0;width:auto!important}
 }
 
 /* compare */
-.compare-wrap{position:relative;overflow-x:auto;background:#fff;border:1px solid var(--rule);border-radius:6px}
+.compare-wrap{position:relative;overflow-x:auto;background:var(--paper);border:1px solid var(--ink);border-radius:0}
 .compare th,.compare td{padding:.55rem .6rem;border-bottom:1px solid var(--rule);text-align:center;font-size:.92rem}
-.compare th:first-child,.compare td:first-child{text-align:left;position:sticky;left:0;background:#fff}
+.compare th:first-child,.compare td:first-child{text-align:left;position:sticky;left:0;background:var(--paper);border-right:1px solid var(--rule)}
 .compare tbody th{font-weight:600}
-.compare thead th{font-weight:600;font-size:.8rem;vertical-align:bottom;color:var(--ink-soft)}
+.compare tbody tr:nth-child(even) th,.compare tbody tr:nth-child(even) td{background:var(--wall)}
+.compare thead th{font-weight:600;font-size:.8rem;vertical-align:bottom;color:#fff;background:var(--door);border-bottom:0}
+.compare thead th:first-child{background:var(--door)}
 .compare td .dot{vertical-align:middle}
+.compare td:last-child strong{font-family:var(--serif);font-weight:400;font-size:1.35rem;color:var(--door)}
 
-/* standard */
-.standard{background:var(--door);color:#fff;border-radius:6px;padding:1.4rem 1.5rem;max-width:860px}
+/* the standard: a framed public notice */
+.standard{background:var(--door);color:#fff;padding:1.6rem 1.7rem;max-width:860px;border:3px double var(--light);outline:6px solid var(--door);outline-offset:0;margin:6px}
 .standard p{margin:.5rem 0;max-width:none}
-.standard .label{color:var(--light);font-weight:600;margin:0 0 .4rem}
-.copyrow{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-top:1rem}
+.standard .label{font-family:var(--serif);font-size:1.55rem;line-height:1.15;color:var(--light);margin:0 0 .7rem}
+.copyrow{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-top:1.1rem}
 .copyrow .btn{background:var(--light);color:var(--ink);border-color:var(--light)}
 .copyrow .btn:hover{background:#fff}
 [role=status]{min-height:1.4em}
 #tipForm select{width:100%;max-width:100%}
 
-/* checklist */
-.field{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:1.2rem 1.4rem;max-width:860px}
+/* checklist and forms: printed-form paper */
+.field{background:var(--paper);border:1px solid var(--rule);border-top:2px solid var(--ink);padding:1.2rem 1.4rem;max-width:860px}
 .field ol{padding-left:1.4rem;margin:.6rem 0}
 .field li{margin:.45rem 0}
 .field p{overflow-wrap:anywhere}
 .writein{height:2rem;border-bottom:1px solid var(--ink-soft);margin:0 0 .4rem}
 .field label{cursor:pointer}
 .field input[type=checkbox]{width:1.15rem;height:1.15rem;margin-right:.5rem;vertical-align:-.15rem;accent-color:var(--door)}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.8rem}
-.rights h3,.two h3{font-size:1.15rem;margin:1.4rem 0 .3rem}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:1.8rem}
+.rights h3,.two h3{font-size:1.2rem;margin:1.4rem 0 .3rem}
+.rights h3::before{content:"";display:block;width:2.4rem;height:4px;background:var(--brick);margin-bottom:.55rem}
 .sources ol{padding-left:1.3rem;max-width:var(--measure)}
 .sources li{margin:.35rem 0;font-size:.95rem}
-.disclosure{background:var(--light-2);border:2px solid var(--light);border-radius:6px;padding:1rem 1.2rem;max-width:var(--measure)}
-footer.site{background:var(--ink);color:#E4E9EE;padding:2.2rem 0;margin-top:2rem;font-size:.95rem}
+.disclosure{background:var(--light-2);border:2px solid var(--light);border-radius:4px;padding:1rem 1.2rem;max-width:var(--measure)}
+
+/* footer: a rowhouse cornice over the street */
+footer.site{background:var(--ink);color:#E4E9EE;padding:0 0 2.2rem;margin-top:2rem;font-size:.95rem}
+/* A strip of brick under a dentil cornice: the top of the block */
+footer.site::before{content:"";display:block;height:36px;background:var(--dentils) repeat-x top/12px 14px,var(--bricks);margin-bottom:1.8rem}
 footer.site a{color:var(--light)}
 footer.site p{max-width:var(--measure)}
+footer.site .foot-brand{font-family:var(--serif);font-size:1.4rem;color:#fff;margin:0 0 .4rem}
+
+/* Windows High Contrast and other forced-color modes: keep every door's outline */
+@media (forced-colors:active){
+  .frame{border-color:CanvasText;outline-color:CanvasText}
+  .house,.doorway{border:1px solid CanvasText}
+  .meter span{border:1px solid CanvasText}
+}
 
 /* print */
 @media print{
   body{background:#fff;font-size:11pt}
-  .topbar,.hero .doors,.hero-key,.controls,.card-actions,.no-print,footer.site nav,.skip{display:none!important}
+  .topbar,.block-wrap,.hero-key,.notice,.controls,.card-actions,.no-print,footer.site nav,.skip,.doorway{display:none!important}
+  .hero{background:#fff;color:#000;padding:0}
+  .hero .lede{color:#000;margin-bottom:1rem}
+  .hero h1 em{color:#000}
   section.block{border:0;padding:1rem 0}
-  .body{break-inside:avoid;border:1px solid #999;border-top:6px solid #000}
+  section.block h2{border-top:2px solid #000}
+  .card-top{display:block;margin:0}
+  .body{break-inside:avoid;border:1px solid #999;border-top:6px solid #000;padding:0 .8rem .8rem}
+  .card-head{padding-top:.6rem}
   body.print-one .print-hide{display:none!important}
   body.print-one .body:not(.printing){display:none!important}
   body.print-checklist .print-hide-cl{display:none!important}
@@ -199,9 +273,9 @@ footer.site p{max-width:var(--measure)}
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 
-<div class="topbar print-hide print-hide-cl">
+<div class="topbar on-dark print-hide print-hide-cl">
   <div class="wrap">
-    <a class="brand" href="#top">Open Door <span>Index</span></a>
+    <a class="brand" href="#top"><svg viewBox="0 0 20 28" aria-hidden="true" focusable="false"><path d="M1 27V10a9 9 0 0 1 18 0v17Z" fill="#F7F5F0"/><path d="M4 27V10.5a6 6 0 0 1 12 0V27Z" fill="#F6C453"/><path d="M4 27V10.5a6 6 0 0 1 6-6V27Z" fill="#1E4766"/></svg>Open Door <span>Index</span></a>
     <nav aria-label="Sections">
       <ul>
         <li><a href="#scorecard">Scorecard</a></li>
@@ -216,11 +290,16 @@ footer.site p{max-width:var(--measure)}
 </div>
 
 <main id="main">
-<div class="hero print-hide print-hide-cl" id="top">
+<div class="hero on-dark print-hide print-hide-cl" id="top">
   <div class="wrap">
-    <h1>Can every Philadelphian get in the room?</h1>
-    <p class="lede">Public meetings are where the city decides things. This index checks whether City Council and ten city boards tell Disabled residents how to take part, using only what each body publishes itself. Every finding is sourced and dated.</p>
+    <p class="notice"><strong>A public notice about public meetings.</strong> <span>Philadelphia, checked November 1, 2026.</span></p>
+    <h1>Can every Philadelphian <em>get in the room?</em></h1>
+    <p class="lede">Public meetings are where the city decides things. This index checks whether City Council and ten city boards tell Disabled residents how to take part, using only what each body publishes itself. <strong>Every finding is sourced and dated.</strong></p>
+  </div>
+  <div class="block-wrap">
     <ul class="doors" id="doors" aria-label="Each door is a public body. The wider it opens, the more access practices it documents. Select a door to read its scorecard."></ul>
+  </div>
+  <div class="wrap">
     <p class="hero-key">A door opens wider for every one of nine access practices a body documents. Partial credit opens it half as far. Each door sits on a white marble step, like a Philadelphia rowhouse stoop, until the body says its meeting room is step-free. Then the step becomes a ramp.</p>
   </div>
 </div>
@@ -263,7 +342,7 @@ footer.site p{max-width:var(--measure)}
       <a class="btn ghost" href="data/open-door-index.json">JSON data</a>
     </div>
     <p class="sortmsg" role="status" id="sortMsg"></p>
-    <noscript><p class="noscript">The scorecard needs JavaScript to display. You can still read every finding in the <a href="data/open-door-index.csv">CSV</a> or <a href="data/open-door-index.json">JSON data</a> data.</p></noscript>
+    <noscript><p class="noscript">The scorecard needs JavaScript to display. You can still read every finding in the <a href="data/open-door-index.csv">CSV</a> or <a href="data/open-door-index.json">JSON</a> data.</p></noscript>
     <div class="bodies" id="bodies"></div>
   </div>
 </section>
@@ -303,7 +382,7 @@ footer.site p{max-width:var(--measure)}
   <div class="wrap">
     <h2 id="standard-h">The Open Door standard</h2>
     <p>Every practice in this index is cheap to fix with one paragraph. Any board can paste this onto its agendas and meeting pages, fill in the brackets, and move up the index the same day.</p>
-    <div class="standard">
+    <div class="standard on-dark">
       <p class="label">Access paragraph for agendas</p>
       <div id="standardText">
         <p>Everyone is welcome at this meeting. It is held at [address], which has [a step-free entrance at ___ / an accessible restroom on floor ___]. You can also join and speak live by video at [link] or by phone at [number].</p>
@@ -392,9 +471,10 @@ footer.site p{max-width:var(--measure)}
 </section>
 </main>
 
-<footer class="site print-hide print-hide-cl">
+<footer class="site on-dark print-hide print-hide-cl">
   <div class="wrap">
-    <p><strong>Open Door Index</strong> is free, open source, and nonpartisan. Built by <a href="https://github.com/meyeringn">Nico Meyering</a> in Philadelphia.</p>
+    <p class="foot-brand">Open Door Index</p>
+    <p>Free, open source, and nonpartisan. Built by <a href="https://github.com/meyeringn">Nico Meyering</a> in Philadelphia.</p>
     <nav aria-label="Project links">
       <p><a href="https://github.com/meyeringn/open-door-index">Source code and data</a> · <a href="https://github.com/meyeringn/open-door-index/blob/main/ACCESSIBILITY.md">Accessibility statement</a> · <a href="https://github.com/meyeringn/open-door-index/blob/main/LICENSE">MIT License</a></p>
     </nav>
@@ -407,6 +487,6 @@ footer.site p{max-width:var(--measure)}
 <script src="js/app.js"></script>
 <!-- Anonymous visit counting (GoatCounter): no cookies, page path only, never form input or query strings -->
 <script>window.goatcounter = { path: function () { return location.pathname; } };</script>
-<script data-goatcounter="https://meyeringn.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://meyeringn.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ Nonpartisan, evidence-based scorecard of whether Disabled Philadelphians can tak
 ## Where things live
 - `data/bodies.js`: every finding, source, and the `CHECKED_ISO` date. A plain script that sets `window.ODI`, NOT JSON, because `fetch()` fails on `file://`.
 - `js/app.js`: rendering only. Never put a finding, source, or date here.
-- `index.html`: markup and CSS. Design tokens are in `:root` at the top. Read `docs/DESIGN.md` before visual changes.
+- `index.html`: markup and CSS. Design tokens are in `:root` at the top. Read `docs/DESIGN.md` before visual changes. Libre Caslon is for large headlines and numbers only; reading text stays in Public Sans. Dark bands carry the `on-dark` class so focus rings turn gold. Text never sits on the brick pattern.
 
 ## Rules
 - IMPORTANT: Never invent, upgrade, or reword a finding without a source you have actually read. A practice is "met" only when the body's own published materials document it. Partial findings are shown but never counted. Use the `update-finding` skill for any correction.
